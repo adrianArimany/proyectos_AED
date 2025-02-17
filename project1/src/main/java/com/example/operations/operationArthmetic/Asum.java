@@ -8,16 +8,15 @@ public class Asum implements Operation {
     @Override
     public Object execute(Object... args) {
         if (args[0] instanceof Float && args[1] instanceof Float) {
-    return ((Float) args[0]).floatValue() + ((Float) args[1]).floatValue();
-} else if (args[0] instanceof Double && args[1] instanceof Double) {
-    return ((Double) args[0]).doubleValue() + ((Double) args[1]).doubleValue();
-} else {
-    LoggerManager.logUnsupportedOperation(CATEGORY, args[0].getClass());
-    return null;
-}
-
-
-        
+            return ((float) args[0]) + ((float) args[1]);
+    } else if (args[0] instanceof Double && args[1] instanceof Double) {
+            return ((double) args[0]) + ((double) args[1]);
+    } else if (args[0] instanceof Integer && args[1] instanceof Integer) {
+            return ((int) args[0]) + ((int) args[1]);
+    } else {
+        LoggerManager.logUnsupportedOperation(CATEGORY, args[0].getClass());
+        return null;
+    }    
     }
     
 }
