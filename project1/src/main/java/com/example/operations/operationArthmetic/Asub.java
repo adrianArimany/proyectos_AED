@@ -8,8 +8,8 @@ public class Asub implements Operation{
 
     @Override
     public Object execute(Object... args){
-        if (args.length < 2) {
-            LoggerManager.logWarning(CATEGORY, "must have at least two operands");
+        if (!(args.length == 2)) {
+            LoggerManager.logWarning(CATEGORY, "must have two operands");
             return null;
         }
 
