@@ -8,12 +8,12 @@ public class Asub implements Operation{
 
     @Override
     public Object execute(Object... args){
-        if (!(args.length == 2)) {
+        if (args.length < 2) {
             LoggerManager.logWarning(CATEGORY, "must have two operands");
             return null;
         }
 
-        double result = 0;
+        double result = 2*(double)args[0];
         boolean hasDouble = false;
         boolean hasFloat = false;
 
@@ -30,6 +30,8 @@ public class Asub implements Operation{
 
             if (num instanceof Double) hasDouble = true;
             if (num instanceof Float) hasFloat = true;
+
+            result -= num.doubleValue();
         }
 
         result = (double) args[0] - (double) args[1];
