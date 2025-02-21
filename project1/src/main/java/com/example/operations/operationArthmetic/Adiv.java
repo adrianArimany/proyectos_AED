@@ -15,7 +15,6 @@ public class Adiv implements Operation{
 
         double result = 0;
         boolean hasDouble = false;
-        boolean hasFloat = false;
 
         for (Object arg : args) {
             if (arg == null) {
@@ -29,7 +28,6 @@ public class Adiv implements Operation{
             Number num = (Number) arg;
 
             if (num instanceof Double) hasDouble = true;
-            if (num instanceof Float) hasFloat = true;
         }
 
         if(args.length == 1){
@@ -40,8 +38,7 @@ public class Adiv implements Operation{
         
 
         if (hasDouble) return result;
-        if (hasFloat) return (float) result;
-        return (int) result;
+        return (float) result;
     }
 
 }
