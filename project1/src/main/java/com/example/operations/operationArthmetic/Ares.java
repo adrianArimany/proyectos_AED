@@ -12,31 +12,26 @@ public class Ares implements Operation{
             LoggerManager.logWarning(CATEGORY, "must have two operands");
             return null;
         }
+        
+        double cond1 = (double)args[0] - (int)args[0];
+        double cond2 = (double)args[1] - (int)args[1];
 
-        double result = 0;
-        boolean hasDouble = false;
-        boolean hasFloat = false;
+        if((cond1 != 0)||(cond2 != 0)){
+            LoggerManager.logWarning(CATEGORY, "must be integers");
+            return null;
+        }
+
+        int result = 0;
 
         for (Object arg : args) {
             if (arg == null) {
                 LoggerManager.logUnsupportedOperation(CATEGORY, null);
                 return null;
-            } else if (!(arg instanceof Number)) {
-                LoggerManager.logUnsupportedOperation(CATEGORY, arg.getClass());
-                return null;
-            }
-        
-            Number num = (Number) arg;
-
-            if (num instanceof Double) hasDouble = true;
-            if (num instanceof Float) hasFloat = true;
+            } 
         }
 
-        result = (double) args[0] % (double) args[1];
+        result = (int) args[0] % (int) args[1];
         
-
-        if (hasDouble) return result;
-        if (hasFloat) return (float) result;
-        return (int) result;
+        return result;
     }
 }
