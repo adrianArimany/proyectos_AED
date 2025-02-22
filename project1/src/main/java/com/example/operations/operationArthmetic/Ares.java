@@ -21,7 +21,7 @@ public class Ares implements Operation{
             return null;
         }
 
-        int result = 0;
+        int result;
 
         for (Object arg : args) {
             if (arg == null) {

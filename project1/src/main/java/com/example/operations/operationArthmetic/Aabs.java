@@ -13,7 +13,7 @@ public class Aabs implements Operation{
             return null;
         }
 
-        double result = 0;
+        double result;
         boolean hasDouble = false;
         boolean hasFloat = false;
 
