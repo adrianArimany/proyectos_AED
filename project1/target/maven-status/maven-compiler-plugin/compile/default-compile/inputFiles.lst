@@ -6,6 +6,7 @@
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/factory/OperationFactory.java
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/operations/operationArthmetic/Amin.java
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/App.java
+/home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/dataManager/Token.java
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/utils/LoggerManager.java
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/dataManager/Transition.java
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/dataManager/FSM.java
@@ -15,3 +16,4 @@
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/operations/operationArthmetic/Amax.java
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/operations/operationArthmetic/Asub.java
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/operations/operationArthmetic/Aabs.java
+/home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/utils/TokenType.java

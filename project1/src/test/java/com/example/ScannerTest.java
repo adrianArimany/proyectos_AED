@@ -27,7 +27,7 @@ public class ScannerTest {
         assertTrue(transition1.finalState);
         // Test the second finite state machine
         FSM fsm2 = scanner.finiteStateMachines.get(1);
-        assertEquals("OPERATIONARTHMETIC", fsm2.tokenName);
+        assertEquals("OPERATIONARITHMETIC", fsm2.tokenName);
         HashMap<Integer, Transition> transitions2 = fsm2.fsm;
         assertEquals(1, transitions2.size());
         Transition transition2 = transitions2.get(0);

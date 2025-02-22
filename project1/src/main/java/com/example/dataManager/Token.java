@@ -12,7 +12,17 @@ public class Token {
     private int line; //Line number where the token is found, this will be used for error messages
     private int column; //Column number where the token is found, this will be used for error messages
 
-    public Token(TokenType tokenType, String lexeme, int line, int column, TokenType type) {
+
+    /**
+     * Constructor a new Token with given type, lexeme, line, coloumn 
+     * @param lexeme : Actual Text
+     * @param line : the line that the token is
+     * @param column : the coloumn where the token is
+     * @param type : the type of the token (again check the src/main/java/com/example/utils/TokenType.java)
+     * 
+     * Remember that a Token is a tuple that has two values: type and lexeme, so what we have here is a sort of matrix that consists of tokens.
+     */
+    public Token(TokenType type, String lexeme, int line, int column) {
         this.type = type;
         this.lexeme = lexeme;
         this.line = line;
@@ -39,11 +49,4 @@ public class Token {
         return String.format("Token{type=%s, lexeme='%s', line=%d, column=%d}", 
                              type, lexeme, line, column);
     }
-
-
-    
-
-
-
-
 }

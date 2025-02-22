@@ -14,8 +14,6 @@ public class Scanner {
  * 
  * Instance <- finite state machines {one for each type of token}
  * 
- * 
- * 
  * Call one line from the file
  *  
  * For each character k advance the state machine (starting from state q_0)
@@ -24,15 +22,15 @@ public class Scanner {
  * 
  * Add the token to the tokens list
  * 
- * 
- * 
  * Once the token list is read though, returns the tokensList
- * 
- * 
- * 
  */ 
     public ArrayList<FSM> finiteStateMachines = new ArrayList<FSM>();
-    public void setUpFiniteStateMachines(){
+
+    public Scanner(){
+      this.setUpFiniteStateMachines();
+    }
+
+    private void setUpFiniteStateMachines(){
       HashMap<Integer, Transition> parenteses = new HashMap<>();
       parenteses.put(0, new Transition(new int[] {
         (int) '(',
@@ -55,10 +53,39 @@ public class Scanner {
       ));
       this.finiteStateMachines.add(new FSM(operationsArithmetic, "OPERATIONARITHMETIC"));
 
-    
+      HashMap<Integer, Transition> integers = new HashMap<>();
+      integers.put(
+        0, new Transition(new int[] {
+        (int) '1',
+        (int) '2',
+        (int) '3',
+        (int) '4',
+        (int) '5',
+        (int) '6',
+        (int) '7',
+        (int) '8',
+        (int) '9', }, 1, true)
+      );
 
-
+      integers.put(1, new Transition(new int[] {
+        )
+      
+      this.finiteStateMachines.add(new FSM(integers, "INTEGER"));
   } 
+
+  public ArrayList<Token> runLine(String line) {
+    ArrayList<Token> tokens = new ArrayList<Token>();
+
+    for(int i = 0; i < line.length(); i++){
+      // Read char and make it a number
+      int character = (int) line.charAt(i);
+
+      for (FSM finiteState : this.finiteStateMachines) {
+        finiteState.next(character);
+      }
+    }
+    
+  }
 
 
 

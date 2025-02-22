@@ -20,15 +20,7 @@ public class FSM {
         isFinalState = false;
     }
     
-    public void next(String symbol) {
-        // --------------------------< debudding >--------------------------
-        // if currentState and symbol are match then go to the next state
-        if (symbol == null || symbol.isEmpty()) { 
-            currentState = -1;
-            isFinalState = false;
-            return;
-        }
-        
+    public void next(int symbol) {
         Transition transition = this.fsm.get(this.currentState);
         if (transition == null) {
             // THe case where the transition is unidentifiable, then go to the error state
@@ -36,13 +28,10 @@ public class FSM {
             isFinalState = false;
             return; 
         }
-        // --------------------------< debudding >--------------------------
-
-        int symbolValue = symbol.charAt(0); // get the ASCII value of the symbol
         boolean foundMatch = false;
-            //Checking for any symbol matches
+        //Checking for any symbol matches
         for (int acceptableSymbol : transition.acceptableSymbol) {
-            if (acceptableSymbol == symbolValue) {
+            if (acceptableSymbol == symbol) {
                 this.currentState = transition.nextState;
                 this.isFinalState = transition.finalState;
                 foundMatch = true;
