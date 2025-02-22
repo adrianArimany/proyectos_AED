@@ -7,21 +7,20 @@ package com.example.utils;
 
 
 public enum TokenType {
- PARENTESIS,
+ PARENTESIS, // ( )
  
  OPERANDARITHMETIC, // + - * / %
  
- LESS,
- GREATER,
- EQUAL,
- LESS_EQUAL,
- GREATER_EQUAL,
- 
- NUMBER,
- STRING,
+ CONDITIONALS, // < > <= >= == != 
 
- IDENTIFIER,
+ NUMBER, // 0, 1,2,3,4,5,6,7,8,9
 
- EOF,
- ERROR,
+ BOOLEAN, // true, false
+
+ STRING, // The comments in the code
+
+ IDENTIFIER, //a,b,c,d,e,f,g,.....,z
+
+ EOF, // End of file
+ ERROR, // Error token (can be when nothing is detected or an unexpected token is detected)
 }
