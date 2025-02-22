@@ -13,7 +13,7 @@ public class Adiv implements Operation{
             return null;
         }
 
-        double result = 0;
+        double result; 
         boolean hasDouble = false;
 
         for (Object arg : args) {
