@@ -7,13 +7,9 @@ package com.example.utils;
 
 
 public enum TokenType {
- OPEN_PAREN,
- CLOSE_PAREN,
+ PARENTESIS, //()
  
- PLUS,
- MINUS,
- MULT,
- DIV,
+ OPERANDARITHMETIC, // + - * / %
  
  LESS,
  GREATER,

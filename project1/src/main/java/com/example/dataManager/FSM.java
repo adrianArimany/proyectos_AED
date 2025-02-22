@@ -2,20 +2,23 @@ package com.example.dataManager;
 
 import java.util.HashMap;
 
+import com.example.utils.TokenType;
+
 public class FSM {
     // state (accepableSymbol nextState finalState)
     public HashMap<Integer, Transition> fsm;
-    public String tokenName;
+    public TokenType tokenName;
     private int currentState;
     private boolean isFinalState;
     
-    public FSM(HashMap<Integer, Transition> fsm, String tokenName) {
+    public FSM(HashMap<Integer, Transition> fsm, TokenType tokenName) {
         this.fsm = fsm;
         this.tokenName = tokenName;
-        reset();
+        this.currentState = 0;
+        this.isFinalState = false;
     }
     
-    private void reset(){
+    public void reset(){
         currentState = 0;
         isFinalState = false;
     }

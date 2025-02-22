@@ -29,6 +29,16 @@ public class Token {
         this.column = column;
     }
 
+    /**
+     * 
+     * @param type : actual text
+     * @param lexeme : the type of the token 
+     */
+    public Token(TokenType type, String lexeme){
+        this.type = type;
+        this.lexeme = lexeme;
+    }
+
     public TokenType getTokenType() {
         return type;
     }
