@@ -17,7 +17,7 @@ public class LoggerManager {
      * @return The logger instance for the category
      */
     public static Logger getLogger(String category) {
-        if (!loggers.containsKey(category)) {
+        if (loggers.containsKey(category)) {
             return loggers.get(category);    
         }
 
@@ -116,6 +116,8 @@ public class LoggerManager {
     * @param clazz The class object representing the unsupported data type
     */
     public static void logUnsupportedOperation(String category, Class<?> clazz) {
-        getLogger(category).info(String.format("Currently Unsupported operation with this data type: %s", clazz.getName()));
+        String className = (clazz != null) ? clazz.getName() : "null";
+        getLogger(category).info(String.format("Currently Unsupported operation with this data type: %s", className));
     }
+    
 }

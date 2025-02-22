@@ -4,6 +4,7 @@ package com.example.dataManager;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.example.utils.LoggerManager;
 import com.example.utils.TokenType;
 
 /**
@@ -191,6 +192,7 @@ public class Scanner {
         return new Token(fsm.tokenName, candidate);
       }
     }
+    LoggerManager.logWarning(CATEGORY, "Grammatical error: unrecognized token \"" + candidate + "\"");
     return new Token(TokenType.ERROR, candidate);
   }
   

@@ -6,7 +6,7 @@ import org.junit.Test;
 import com.example.operations.operationArthmetic.Asum;
 
 public class operationsTest {
-    private Asum asum = new Asum();
+    private final Asum asum = new Asum();
     @Test
     public void testLessThanTwoOperands() {
         Object[] args = new Object[1];

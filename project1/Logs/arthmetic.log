@@ -1,0 +1,14 @@
+Feb 22, 2025 4:30:47 PM com.example.utils.LoggerManager logWarning
+WARNING: must have at least two operands
+Feb 22, 2025 4:31:03 PM com.example.utils.LoggerManager logWarning
+WARNING: must have at least two operands
+Feb 22, 2025 4:31:06 PM com.example.utils.LoggerManager logUnsupportedOperation
+INFO: Currently Unsupported operation with this data type: java.lang.String
+Feb 22, 2025 4:31:06 PM com.example.utils.LoggerManager logWarning
+WARNING: must have at least two operands
+Feb 22, 2025 4:31:09 PM com.example.utils.LoggerManager logUnsupportedOperation
+INFO: Currently Unsupported operation with this data type: java.lang.String
+Feb 22, 2025 4:31:09 PM com.example.utils.LoggerManager logWarning
+WARNING: must have at least two operands
+Feb 22, 2025 4:40:51 PM com.example.utils.LoggerManager logUnsupportedOperation
+INFO: Currently Unsupported operation with this data type: null

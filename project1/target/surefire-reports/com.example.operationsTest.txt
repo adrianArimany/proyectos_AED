@@ -1,16 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.example.operationsTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.037 s <<< FAILURE! - in com.example.operationsTest
-testNonNumberOperand(com.example.operationsTest)  Time elapsed: 0.009 s  <<< ERROR!
-java.lang.NullPointerException: Cannot invoke "java.util.logging.Logger.info(String)" because the return value of "com.example.utils.LoggerManager.getLogger(String)" is null
-	at com.example.operationsTest.testNonNumberOperand(operationsTest.java:23)
-
-testNullOperand(com.example.operationsTest)  Time elapsed: 0 s  <<< ERROR!
-java.lang.NullPointerException: Cannot invoke "java.lang.Class.getName()" because "clazz" is null
-	at com.example.operationsTest.testNullOperand(operationsTest.java:18)
-
-testLessThanTwoOperands(com.example.operationsTest)  Time elapsed: 0 s  <<< ERROR!
-java.lang.NullPointerException: Cannot invoke "java.util.logging.Logger.warning(String)" because the return value of "com.example.utils.LoggerManager.getLogger(String)" is null
-	at com.example.operationsTest.testLessThanTwoOperands(operationsTest.java:13)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.076 s - in com.example.operationsTest
