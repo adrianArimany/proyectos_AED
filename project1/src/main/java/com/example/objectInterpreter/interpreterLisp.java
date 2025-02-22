@@ -1,10 +1,10 @@
-package com.example.objectCompiler;
+package com.example.objectInterpreter;
 /**
  * Syntax Tree 
  * 
  * 
  */
-public class compilerLisp implements  Icompiler{
+public class interpreterLisp implements  Iinterpreter{
     @Override
     public Object compile(String code) {
     /**

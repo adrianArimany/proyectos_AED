@@ -2,7 +2,7 @@ package com.example.dataManager;
 /**
  * 
  * 
- * 
+ * Here is where all the finite state machines run also known as a Scanner.
  * 
  */
 public class Scanner {
