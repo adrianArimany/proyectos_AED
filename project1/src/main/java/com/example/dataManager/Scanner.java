@@ -1,4 +1,8 @@
 package com.example.dataManager;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * 
  * 
@@ -27,4 +31,28 @@ public class Scanner {
  * 
  * 
  */ 
+  ArrayList<FSM> finiteStateMachines = new ArrayList<FSM>();
+  public void setUpFiniteStateMachines(){
+    HashMap<Integer, Transition> parenteses = new HashMap<>();
+    parenteses.put(0, new Transition(new int[] {
+      (int) '(',
+      (int) ')',
+    },
+    1,
+    true
+    ));
+    this.finiteStateMachines.add(new FSM(parenteses, "PARENTESIS")); //the issue: "(FSM(object), token)" (not good), since is a map then the object has to be in the same map with the token name  (FSM(object, token))
+
+  } 
+
+
+
+  //(+ 1 2)
+// ( '(', PARENETES)
+// ( '+', SUM)
+// ( '1', INTEGER)
+// ( '2', INTEGER)
+// ( ')', PARENETES)
+
+
 }
