@@ -76,6 +76,46 @@ public class Scanner {
     }, 1, true));
 
     this.finiteStateMachines.add(new FSM(integers, TokenType.NUMBER));
+    //Remember that lisp takes all letters as capital when they are compiled.
+    HashMap<Integer, Transition> indentifier = new HashMap<>();
+    indentifier.put(0, new Transition(new int[] {
+        (int) 'a',
+        (int) 'b',
+        (int) 'c',
+        (int) 'd',
+        (int) 'e',
+        (int) 'f',
+        (int) 'g',
+        (int) 'h',
+        (int) 'i',
+        (int) 'j',
+        (int) 'k',
+        (int) 'l',
+        (int) 'm',
+        (int) 'n',
+        (int) 'o',
+        (int) 'p',
+        (int) 'q',
+        (int) 'r',
+        (int) 's',
+        (int) 't',        
+        (int) 'u',
+        (int) 'v',
+        (int) 'w',
+        (int) 'x',
+        (int) 'y',
+        (int) 'z',
+    }, 1, true));
+    
+    this.finiteStateMachines.add(new FSM(indentifier, TokenType.IDENTIFIER));
+
+    HashMap<Integer, Transition> conditionals = new HashMap<>();
+    conditionals.put(0, new Transition(new int[] {
+        (int) '<',
+        (int) '>',
+        (int) '=',
+    }, 1, true));
+    this.finiteStateMachines.add(new FSM(conditionals, TokenType.CONDITIONALS));
   }
   // <--------------------------------(Finite statemachines)-------------------------------->
 
