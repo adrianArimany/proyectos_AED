@@ -31,17 +31,32 @@ public class Scanner {
  * 
  * 
  */ 
-  ArrayList<FSM> finiteStateMachines = new ArrayList<FSM>();
-  public void setUpFiniteStateMachines(){
-    HashMap<Integer, Transition> parenteses = new HashMap<>();
-    parenteses.put(0, new Transition(new int[] {
-      (int) '(',
-      (int) ')',
-    },
-    1,
-    true
-    ));
-    this.finiteStateMachines.add(new FSM(parenteses, "PARENTESIS")); //the issue: "(FSM(object), token)" (not good), since is a map then the object has to be in the same map with the token name  (FSM(object, token))
+    public ArrayList<FSM> finiteStateMachines = new ArrayList<FSM>();
+    public void setUpFiniteStateMachines(){
+      HashMap<Integer, Transition> parenteses = new HashMap<>();
+      parenteses.put(0, new Transition(new int[] {
+        (int) '(',
+        (int) ')',
+      },
+      1,
+      true
+      ));
+      this.finiteStateMachines.add(new FSM(parenteses, "PARENTESIS")); //the issue: "(FSM(object), token)" (not good), since is a map then the object has to be in the same map with the token name  (FSM(object, token))
+
+      HashMap<Integer, Transition> operationsArthmetic = new HashMap<>();
+      operationsArthmetic.put(0, new Transition(new int[] {
+        (int) '+',
+        (int) '-',
+        (int) '*',
+        (int) '/',
+      },
+      1,
+      true
+      ));
+      this.finiteStateMachines.add(new FSM(operationsArthmetic, "OPERATIONARTHMETIC"));
+      
+    
+
 
   } 
 

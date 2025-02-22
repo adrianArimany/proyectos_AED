@@ -2,6 +2,4 @@ com/example/App.class
 com/example/operations/operationArthmetic/Asum.class
 com/example/operations/Operation.class
 com/example/utils/LoggerManager.class
-com/example/objectCompiler/compilerLisp.class
 com/example/factory/OperationFactory.class
-com/example/objectCompiler/Icompiler.class
