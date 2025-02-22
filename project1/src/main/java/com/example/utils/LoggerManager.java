@@ -11,7 +11,6 @@ public class LoggerManager {
     private static final Map<String, Logger> loggers = new HashMap<>();
     private static final String LOG_DIR = System.getProperty("user.dir") + "/Logs";
 
-
     /**
      * Retrieves or creates a logger for the specified category.
      * @param category The category name (e.g., "gui", "operations", etc.)
