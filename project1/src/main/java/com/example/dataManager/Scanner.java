@@ -185,7 +185,8 @@ public class Scanner {
 
     for (int i = 0; i < line.length(); i++) {
       char ch = line.charAt(i);
-
+//uses the function defun or setq. 
+        
       // When we hit a delimiter, process the token from tokenStart to i.
       if (ch == ' ' || ch == '(' || ch == ')') {
         if (i > tokenStart) {
@@ -195,6 +196,20 @@ public class Scanner {
           }
         }
         // If the delimiter is a parenthesis, add it as its own token.
+        
+        //Check if the TOKEN is DEFUN 
+        if (i + 4 < line.length() && line.substring(i, i + 5).toUpperCase().equals("DEFUN")) {
+          tokens.add(new Token(TokenType.FUN, "DEFUN"));
+          i += 4;
+        }
+
+
+        //Check if the TOKEN is SETQ
+        if (i + 3  < line.length() && line.substring(i, i + 4).equals("SETQ")) {
+          tokens.add(new Token(TokenType.FUN, "SETQ"));
+          i += 3;
+        }
+
         if (ch == '(') {
           tokens.add(new Token(TokenType.PARENTESIS, "("));
         } else if (ch == ')') {
@@ -237,5 +252,6 @@ public class Scanner {
   }
   
 
+  
 
 }

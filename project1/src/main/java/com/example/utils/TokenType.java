@@ -24,7 +24,7 @@ public enum TokenType {
  EOF, // End of file
  ERROR, // Error token (can be when nothing is detected or an unexpected token is detected)
 
- FUN, // Pa los defun
 
- SETQ, // Pa los setq
+
+ FUN, // Pa los defun y setq
 }

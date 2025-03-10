@@ -13,7 +13,7 @@ public class ScannerTest {
     public void testSetUpFiniteStateMachines() {
         Scanner scanner = new Scanner();
         // Test that two finite state machines are added
-        assertEquals(2, scanner.finiteStateMachines.size());
+        assertEquals(4, scanner.finiteStateMachines.size());
         FSM fsm_operand = scanner.finiteStateMachines.get(1);
         fsm_operand.next((int) '6');
         
@@ -30,5 +30,17 @@ public class ScannerTest {
         assertEquals(TokenType.NUMBER, tokens.get(2).getTokenType());
         assertEquals(TokenType.NUMBER, tokens.get(3).getTokenType());
         assertEquals(TokenType.PARENTESIS, tokens.get(4).getTokenType());
+    }
+
+
+    @Test
+    public void testRunLineFUN() {
+        Scanner scanner = new Scanner();
+        String line = "( DEFUN )";
+        ArrayList<Token> tokens = scanner.runLine(line);
+        assertEquals(3, tokens.size());
+        assertEquals(TokenType.PARENTESIS, tokens.get(0).getTokenType());
+        assertEquals(TokenType.FUN, tokens.get(1).getTokenType());
+        assertEquals(TokenType.PARENTESIS, tokens.get(2).getTokenType());
     }
 }
