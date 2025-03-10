@@ -205,7 +205,7 @@ public class Scanner {
 
 
         //Check if the TOKEN is SETQ
-        if (i + 3  < line.length() && line.substring(i, i + 4).equals("SETQ")) {
+        if (i + 3  < line.length() && line.substring(i, i + 4).toUpperCase().equals("SETQ")) {
           tokens.add(new Token(TokenType.FUN, "SETQ"));
           i += 3;
         }
