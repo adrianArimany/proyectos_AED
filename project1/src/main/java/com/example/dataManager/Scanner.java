@@ -196,25 +196,12 @@ public class Scanner {
           }
         }
         // If the delimiter is a parenthesis, add it as its own token.
-        
-        //Check if the TOKEN is DEFUN 
-        if (i + 4 < line.length() && line.substring(i, i + 5).toUpperCase().equals("DEFUN")) {
-          tokens.add(new Token(TokenType.FUN, "DEFUN"));
-          i += 4;
-        }
-
-
-        //Check if the TOKEN is SETQ
-        if (i + 3  < line.length() && line.substring(i, i + 4).toUpperCase().equals("SETQ")) {
-          tokens.add(new Token(TokenType.FUN, "SETQ"));
-          i += 3;
-        }
-
         if (ch == '(') {
           tokens.add(new Token(TokenType.PARENTESIS, "("));
         } else if (ch == ')') {
           tokens.add(new Token(TokenType.PARENTESIS, ")"));
         }
+        
         // Set tokenStart to the character after the delimiter.
         tokenStart = i + 1;
       }
@@ -238,6 +225,16 @@ public class Scanner {
    * Otherwise, returns an error token.
    */
   private Token processCandidate(String candidate) {
+    
+    //Special Token:
+    //Token DEFUN to create functions
+    Token reserved = isReserved(candidate);
+    if (reserved != null) {
+      return reserved;
+    }
+    
+    
+    
     for (FSM fsm : finiteStateMachines) {
       fsm.reset();
       for (char c : candidate.toCharArray()) {
@@ -252,6 +249,25 @@ public class Scanner {
   }
   
 
-  
 
-}
+  /**
+   * Checks for any Reserved or special case in the scanner.
+   * Currently the reserved is for DEFUN and SETQ
+   * 
+   * 
+   * @param candidate
+   * @return
+   */
+  private Token isReserved(String candidate) {
+    if (candidate == null) {
+      return null;
+    }
+    String isreserved = candidate.trim().toUpperCase();
+    if (isreserved.equals("DEFUN") || isreserved.equals("SETQ")) {
+      return new Token(TokenType.FUN, candidate);
+    }
+    return null;
+  }
+
+  
+  }

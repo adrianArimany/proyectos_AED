@@ -36,7 +36,18 @@ public class ScannerTest {
     @Test
     public void testRunLineFUN() {
         Scanner scanner = new Scanner();
-        String line = "( DEFUN )";
+        String line = "(DEFUN )";
+        ArrayList<Token> tokens = scanner.runLine(line);
+        assertEquals(3, tokens.size());
+        assertEquals(TokenType.PARENTESIS, tokens.get(0).getTokenType());
+        assertEquals(TokenType.FUN, tokens.get(1).getTokenType());
+        assertEquals(TokenType.PARENTESIS, tokens.get(2).getTokenType());
+    }
+
+    @Test
+    public void testRunLineSETQ() {
+        Scanner scanner = new Scanner();
+        String line = "(SetQ )";
         ArrayList<Token> tokens = scanner.runLine(line);
         assertEquals(3, tokens.size());
         assertEquals(TokenType.PARENTESIS, tokens.get(0).getTokenType());
