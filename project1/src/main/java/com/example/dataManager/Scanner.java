@@ -12,6 +12,9 @@ import com.example.utils.TokenType;
  * 
  * Here is where all the finite state machines run also known as a Scanner.
  * 
+ * @TODO:
+ * 1. Implement the recursive expression in the Scanner. 
+ * 
  */
 public class Scanner {
   /**
@@ -74,48 +77,81 @@ public class Scanner {
         (int) '8',
         (int) '9',
     }, 1, true));
-
     this.finiteStateMachines.add(new FSM(integers, TokenType.NUMBER));
-    //Remember that lisp takes all letters as capital when they are compiled.
-    HashMap<Integer, Transition> indentifier = new HashMap<>();
-    indentifier.put(0, new Transition(new int[] {
-        (int) 'a',
-        (int) 'b',
-        (int) 'c',
-        (int) 'd',
-        (int) 'e',
-        (int) 'f',
-        (int) 'g',
-        (int) 'h',
-        (int) 'i',
-        (int) 'j',
-        (int) 'k',
-        (int) 'l',
-        (int) 'm',
-        (int) 'n',
-        (int) 'o',
-        (int) 'p',
-        (int) 'q',
-        (int) 'r',
-        (int) 's',
-        (int) 't',        
-        (int) 'u',
-        (int) 'v',
-        (int) 'w',
-        (int) 'x',
-        (int) 'y',
-        (int) 'z',
-    }, 1, true));
+
+    //The problem with this machine is that it doesn't considers capital letter, so words like poTato might  appear, and it would ignore the T.
     
-    this.finiteStateMachines.add(new FSM(indentifier, TokenType.IDENTIFIER));
+    // //Remember that lisp takes all letters as capital when they are compiled.
+    // HashMap<Integer, Transition> indentifier = new HashMap<>();
+    // indentifier.put(0, new Transition(new int[] {
+    //     (int) 'a',
+    //     (int) 'b',
+    //     (int) 'c',
+    //     (int) 'd',
+    //     (int) 'e',
+    //     (int) 'f',
+    //     (int) 'g',
+    //     (int) 'h',
+    //     (int) 'i',
+    //     (int) 'j',
+    //     (int) 'k',
+    //     (int) 'l',
+    //     (int) 'm',
+    //     (int) 'n',
+    //     (int) 'o',
+    //     (int) 'p',
+    //     (int) 'q',
+    //     (int) 'r',
+    //     (int) 's',
+    //     (int) 't',        
+    //     (int) 'u',
+    //     (int) 'v',
+    //     (int) 'w',
+    //     (int) 'x',
+    //     (int) 'y',
+    //     (int) 'z',
+    // }, 1, true));
+    // this.finiteStateMachines.add(new FSM(indentifier, TokenType.IDENTIFIER));
+    // The following a more sophisticated version of the identifier machine, which handles capital letters.
+    //  Assited by CHATGPT (2025).
+    HashMap<Integer, Transition> identifier = new HashMap<>();
+      int[] allowedChars = new int[52];
+        for (int i = 0; i < 26; i++) {
+          allowedChars[i] = (int) ('a' + i);
+          allowedChars[i + 26] = (int) ('A' + i);
+    }
+      // State 0: On reading the first letter, transition to state 1.
+    identifier.put(0, new Transition(allowedChars, 1, true));
+    // State 1: For each subsequent letter, stay in state 1.
+    identifier.put(1, new Transition(allowedChars, 1, true));
+  this.finiteStateMachines.add(new FSM(identifier, TokenType.IDENTIFIER));
+
 
     HashMap<Integer, Transition> conditionals = new HashMap<>();
+    // In state 0, accept any of '<', '>', or '=' and transition to state 1 (final state).
+    //Recall LISP doesn't recognize == or != as conditionals.
+    //For the conditionals that are EQ, EQL, EQUAL, these will be included in the isReserved method. 
+    //(note these are not conditionals but functions and should be consider EQUALITY) 
+    // State 0: Accept initial characters for comparison operators.
     conditionals.put(0, new Transition(new int[] {
-        (int) '<',
-        (int) '>',
-        (int) '=',
+      (int) '<',
+      (int) '>',
+      (int) '='
     }, 1, true));
+
+    // State 1: If the operator started with '<' or '>', optionally accept '=' to form '<=' or '>='.
+    // It will consider ==, but is not USED in lisp, so is not expected to be used.
+    conditionals.put(1, new Transition(new int[] {
+      (int) '='
+    }, 2, true));
     this.finiteStateMachines.add(new FSM(conditionals, TokenType.CONDITIONALS));
+
+    HashMap<Integer, Transition> inequality = new HashMap<>();
+    // State 0: Accept '/'
+    inequality.put(0, new Transition(new int[] { (int) '/' }, 1, false));
+    // State 1: Accept '=' to form '/='
+    inequality.put(1, new Transition(new int[] { (int) '=' }, 2, true));
+    this.finiteStateMachines.add(new FSM(inequality, TokenType.CONDITIONALS));
   }
   // <--------------------------------(Finite statemachines)-------------------------------->
 
@@ -260,14 +296,19 @@ public class Scanner {
    */
   private Token isReserved(String candidate) {
     if (candidate == null) {
-      return null;
+        return null;
     }
-    String isreserved = candidate.trim().toUpperCase();
-    if (isreserved.equals("DEFUN") || isreserved.equals("SETQ")) {
-      return new Token(TokenType.FUN, candidate);
+    String normalized = candidate.trim().toUpperCase();
+    // Reserved tokens for function definitions or assignments
+    if (normalized.equals("DEFUN") || normalized.equals("SETQ")) {
+        return new Token(TokenType.FUN, candidate);
+    }
+    // Special equality operators in Lisp
+    if (normalized.equals("EQ") || normalized.equals("EQL") || normalized.equals("EQUAL")) {
+        return new Token(TokenType.EQUALITY, candidate); // Or TokenType.IDENTIFIER if not special
     }
     return null;
-  }
+}
 
   
   }

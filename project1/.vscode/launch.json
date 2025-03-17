@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "FileManagerGUI",
+            "request": "launch",
+            "mainClass": "com.example.gui.FileManagerGUI",
+            "projectName": "project1"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"

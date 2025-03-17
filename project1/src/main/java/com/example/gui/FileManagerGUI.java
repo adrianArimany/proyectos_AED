@@ -1,6 +1,6 @@
 package com.example.gui;
 
-import com.example.utils.LoggerManager;
+
 import com.example.utils.fileUtil;
 
 import javax.swing.*;
@@ -11,12 +11,12 @@ import java.io.File;
 import java.io.IOException;
 
 public class FileManagerGUI {
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger("fileManager");
+    //private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger("fileManager");
 
-    private JFrame frame;
-    private JTextArea textArea;
-    private JButton btnSelectFile;
-    private JButton btnStoreFile;
+    private final JFrame frame;
+    private final JTextArea textArea;
+    private final JButton btnSelectFile;
+    private final JButton btnStoreFile;
     private File selectedFile;
 
     public FileManagerGUI() {
@@ -71,13 +71,13 @@ public class FileManagerGUI {
 
         if (result == JFileChooser.APPROVE_OPTION) {
             selectedFile = fileChooser.getSelectedFile();
-            logger.info("LISP file selected: " + selectedFile.getAbsolutePath());
+            //logger.info(String.format("LISP file selected: " + selectedFile.getAbsolutePath()));
             try {
                 // Leer el contenido del archivo y mostrarlo en el área de texto
                 String content = fileUtil.readFileAsString(selectedFile.getAbsolutePath());
                 textArea.setText(content);
             } catch (IOException ex) {
-                logger.severe("Error reading file: " + ex.getMessage());
+                //logger.severe(String.format("Error reading file: " + ex.getMessage()));
                 JOptionPane.showMessageDialog(frame, "Error reading file: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
@@ -92,25 +92,15 @@ public class FileManagerGUI {
         try {
             // Almacenar el archivo en el directorio /files
             fileUtil.storeFile(selectedFile.getAbsolutePath());
-            logger.info("LISP file stored successfully: " + selectedFile.getName());
+            //logger.info(String.format("LISP file stored successfully: %s", selectedFile.getName()));
             JOptionPane.showMessageDialog(frame, "File stored successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
         } catch (IOException ex) {
-            logger.severe("Error storing file: " + ex.getMessage());
+            //logger.severe(String.format("Error storing file: " + ex.getMessage()));
             JOptionPane.showMessageDialog(frame, "Error storing file: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
     public void show() {
         frame.setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                FileManagerGUI gui = new FileManagerGUI();
-                gui.show();
-            }
-        });
     }
 }

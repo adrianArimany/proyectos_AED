@@ -1,5 +1,9 @@
 package com.example;
 
+import javax.swing.SwingUtilities;
+
+import com.example.gui.FileManagerGUI;
+
 /**
  * Hello world!
  * 
@@ -12,6 +16,9 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        SwingUtilities.invokeLater(() -> {
+            FileManagerGUI gui = new FileManagerGUI();
+            gui.show();
+        });
     }
 }
