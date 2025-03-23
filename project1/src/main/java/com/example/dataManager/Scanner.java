@@ -13,7 +13,7 @@ import com.example.utils.TokenType;
  * Here is where all the finite state machines run also known as a Scanner.
  * 
  * @TODO:
- * 1. Implement the recursive expression in the Scanner. 
+ *  
  * 
  */
 public class Scanner {

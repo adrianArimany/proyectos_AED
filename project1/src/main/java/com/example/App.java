@@ -10,7 +10,7 @@ import com.example.gui.FileManagerGUI;
  * 
  * IMPORTANT:
  * @TODO
- * - Finish all the other finite statemachines for the other operands and characters and comments etc
+ * 
  */
 public class App 
 {
