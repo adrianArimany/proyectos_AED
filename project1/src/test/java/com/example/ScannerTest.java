@@ -43,4 +43,44 @@ public class ScannerTest {
         assertEquals(TokenType.FUN, tokens.get(1).getTokenType());
         assertEquals(TokenType.PARENTESIS, tokens.get(2).getTokenType());
     }
+
+    @Test
+    public void testRunLineGram() {
+        Scanner scanner = new Scanner();
+        String line = "( + X 5 )";
+        ArrayList<Token> tokens = scanner.runLine(line);
+        assertEquals(5, tokens.size());
+    }
+
+    @Test
+    public void testSetQ() {
+        Scanner scanner = new Scanner();
+        String line = "(SETQ X 5 )";
+        scanner.HashSetQ(line);
+        assertEquals(1,scanner.getVariableSet().size());
+    }
+
+    @Test
+    public void testSetQValue() {
+        Scanner scanner = new Scanner();
+        String line = "(SETQ X 5 )";
+        scanner.HashSetQ(line);
+        assertEquals(5,scanner.getVariableSet().get("X"));
+    }
+
+    @Test
+    public void testDefun() {
+        Scanner scanner = new Scanner();
+        String line = "(DEFUN SUMA (X Y) (+ X Y))";
+        scanner.HashDefun(line);
+        assertEquals(1,scanner.getFunctionSet().size());
+    }
+
+    @Test
+    public void testDefunArgument() {
+        Scanner scanner = new Scanner();
+        String line = "(DEFUN SUMA (X Y) (+ X Y))";
+        scanner.HashDefun(line);
+        assertEquals("( X Y ) ( + X Y )",scanner.getFunctionSet().get("SUMA"));
+    }
 }
