@@ -13,7 +13,7 @@ public class Amax implements Operation{
             return null;
         }
 
-        double result = (double) args[0];
+        double result = ((Number) args[0]).doubleValue();
         boolean hasDouble = false;
         boolean hasFloat = false;
 
@@ -30,8 +30,8 @@ public class Amax implements Operation{
 
             if (num instanceof Double) hasDouble = true;
             if (num instanceof Float) hasFloat = true;
-            if(result < (double)arg){
-                result = (double) arg;
+            if(result < ((Number)arg).doubleValue()) {
+                result = ((Number)arg).doubleValue();
             }
 
         }

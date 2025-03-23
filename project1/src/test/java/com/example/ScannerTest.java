@@ -42,5 +42,5 @@ public class ScannerTest {
         assertEquals(TokenType.PARENTESIS, tokens.get(0).getTokenType());
         assertEquals(TokenType.FUN, tokens.get(1).getTokenType());
         assertEquals(TokenType.PARENTESIS, tokens.get(2).getTokenType());
-    }
+    } 
 }

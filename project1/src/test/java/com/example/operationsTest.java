@@ -55,6 +55,27 @@ public class operationsTest {
     public void testDiv(){
         Adiv adiv = new Adiv();
         Object[] args = new Object[] {5, 2};
-        assertEquals(2.5, adiv.execute(args));
+        assertEquals(2.5f, adiv.execute(args));
+    }
+
+    @Test
+    public void testAbs(){
+    Aabs abs = new Aabs();
+    Object[] args = new Object[] {-2};
+    assertEquals(2, abs.execute(args));
+    }
+
+    @Test
+    public void testAmax(){
+        Amax amax = new Amax();
+        Object[] args = new Object[] {2, 3, 1.2, 7, -1, 0};
+        assertEquals(7.0, amax.execute(args));
+    }
+
+    @Test
+    public void testAmin(){
+        Amin amin = new Amin();
+        Object[] args = new Object[] {2, 3, 1.2, 7, -1, 0};
+        assertEquals(-1.0, amin.execute(args));
     }
 }

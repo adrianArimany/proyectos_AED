@@ -33,7 +33,7 @@ public class Adiv implements Operation{
         if(args.length == 1){
             result = 1 / ((Number) args[0]).doubleValue();
         }else{
-            result = (double) args[0] / (double) args[1];
+            result = ((Number) args[0]).doubleValue() / ((Number) args[1]).doubleValue();
         }
         
 
