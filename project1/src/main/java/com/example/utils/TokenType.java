@@ -9,7 +9,7 @@ package com.example.utils;
 public enum TokenType {
  PARENTESIS, // ( )
  
- OPERANDARITHMETIC, // + - * / %
+ OPERANDARITHMETIC, // + - * / % ABS MAX MIN
  
  CONDITIONALS, // < > <= >= == 
 

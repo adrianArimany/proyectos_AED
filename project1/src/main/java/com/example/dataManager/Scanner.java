@@ -43,7 +43,7 @@ public class Scanner {
         (int) '+',
         (int) '-',
         (int) '*',
-        (int) '/',
+        (int) '/', 
     },
         1,
         true));
@@ -201,6 +201,14 @@ public class Scanner {
         if (i + 4 < line.length() && line.substring(i, i + 5).toUpperCase().equals("DEFUN")) {
           tokens.add(new Token(TokenType.FUN, "DEFUN"));
           i += 4;
+          int j = i;
+          String functionname = "";
+          while(line.charAt(j) != '('){
+            if(!Character.isWhitespace(line.charAt(j))) {
+              functionname += line.charAt(j);
+            }
+            j +=1;
+          }
         }
 
 
