@@ -31,6 +31,8 @@ public class Scanner {
    */
   public ArrayList<FSM> finiteStateMachines = new ArrayList<>();
   private static final String CATEGORY = "scanner";
+  private HashMap<String,String> FunctionSet = new HashMap<>();
+  private HashMap<String, Integer> VariableSet = new HashMap<>();
 
   public Scanner() {
     this.setUpFiniteStateMachines();
@@ -43,7 +45,7 @@ public class Scanner {
         (int) '+',
         (int) '-',
         (int) '*',
-        (int) '/', 
+        (int) '/',
     },
         1,
         true));
@@ -216,6 +218,21 @@ public class Scanner {
         if (i + 3  < line.length() && line.substring(i, i + 4).toUpperCase().equals("SETQ")) {
           tokens.add(new Token(TokenType.FUN, "SETQ"));
           i += 3;
+          int j = i +5;
+          String variablename = "";
+          while(!Character.isWhitespace(line.charAt(j))) {
+            variablename += line.charAt(j);
+            j +=1;
+          }
+          j+=1;
+          String variableValue = "";
+          while(line.charAt(j) != ')') {
+            variableValue += line.charAt(j);
+          }
+          int intvalue = Integer.parseInt(variableValue);
+          VariableSet.put(variablename, intvalue);
+
+
         }
 
         if (ch == '(') {
@@ -258,8 +275,35 @@ public class Scanner {
     LoggerManager.logWarning(CATEGORY, "Grammatical error: unrecognized token \"" + candidate + "\"");
     return new Token(TokenType.ERROR, candidate);
   }
-  
 
-  
+  public HashMap<String, Integer> getVariableSet() {
+    return VariableSet;
+  }
 
+  public HashMap<String, String> getFunctionSet() {
+    return FunctionSet;
+  }
+
+  public void HashSetQ(String line){
+    for(int i = 0; i < runLine(line).size(); i++){
+      if(runLine(line).get(i).getLexeme().equals("SETQ")){
+        VariableSet.put(runLine(line).get(i+1).getLexeme(), Integer.parseInt(runLine(line).get(i+2).getLexeme()));
+      }
+    }
+  }
+
+  public void HashDefun(String line){
+    for(int i = 0; i < runLine(line).size(); i++){
+      if(runLine(line).get(i).getLexeme().equals("DEFUN")){
+        int j = i+2;
+        String functionargument = "";
+        while(j < runLine(line).size()-2){
+          functionargument += runLine(line).get(j).getLexeme() + " ";
+          j +=1;
+        }
+        functionargument += runLine(line).get(j).getLexeme();
+        FunctionSet.put(runLine(line).get(i+1).getLexeme(), functionargument);
+      }
+    }
+  }
 }
