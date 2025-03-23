@@ -276,14 +276,26 @@ public class Scanner {
     return new Token(TokenType.ERROR, candidate);
   }
 
+  /**
+   * Método para acceder al valor de las variables guardadas
+   * @return
+   */
   public HashMap<String, Integer> getVariableSet() {
     return VariableSet;
   }
 
+  /**
+   * Método para acceder a las funciones guardadas
+   * @return
+   */
   public HashMap<String, String> getFunctionSet() {
     return FunctionSet;
   }
 
+  /**
+   * Método para guardar el valor de una variable
+   * @param line
+   */
   public void HashSetQ(String line){
     for(int i = 0; i < runLine(line).size(); i++){
       if(runLine(line).get(i).getLexeme().equals("SETQ")){
@@ -292,6 +304,10 @@ public class Scanner {
     }
   }
 
+  /**
+   * Método para guardar una función
+   * @param line
+   */
   public void HashDefun(String line){
     for(int i = 0; i < runLine(line).size(); i++){
       if(runLine(line).get(i).getLexeme().equals("DEFUN")){
@@ -307,6 +323,11 @@ public class Scanner {
     }
   }
 
+  /**
+   * Método para determinar la cantidad de parámetros de una función
+   * @param FunctionName
+   * @return
+   */
   public int getNumberofParameters(String FunctionName){
     String argument = FunctionSet.get(FunctionName);
     int i = 0;
@@ -320,6 +341,11 @@ public class Scanner {
     return numberofparameters;
   }
 
+  /**
+   * Método para determinar si ya existe una función
+   * @param line
+   * @return
+   */
   public boolean hasafunction(String line) {
     if(FunctionSet.containsKey(runLine(line).get(1).getLexeme())){
       return true;
@@ -327,6 +353,11 @@ public class Scanner {
     return false;
   }
 
+  /**
+   * Método para determinar si existe una función (si es válida) la cual es ingresada en una línea acorde a la cantida de parámetros con los que se ingresa
+   * @param line
+   * @return
+   */
   public boolean ValidateFunction(String line) {
     if(hasafunction(line)){
       String keytofunction = runLine(line).get(1).getLexeme();
@@ -337,4 +368,43 @@ public class Scanner {
     }
     return false;
   }
+
+  /**
+   * Método para obtener cuales son las variables de la función
+   * @param keyToFunction
+   * @return
+   */
+  public ArrayList<Character> listOfParameters(String keyToFunction){
+    String argument = FunctionSet.get(keyToFunction);
+    int i = 0;
+    ArrayList<Character> parameters = new ArrayList<>();
+    while(argument.charAt(i) != ')') {
+      if (!Character.isWhitespace(argument.charAt(i)) && argument.charAt(i) != '(') {
+        parameters.add(argument.charAt(i));
+      }
+      i+=1;
+    }
+
+    return parameters;
+  }
+
+  /**
+   * Método que se utilizará para obtener unicamente el argumento o regla de asignación de una función
+   * @param line
+   * @return
+   */
+  public String FunctionArgument(String line) {
+    if (ValidateFunction(line)) {
+      String argument = FunctionSet.get(runLine(line).get(1).getLexeme());
+      int i = 0;
+      while(argument.charAt(i) != ')') {
+        i+=1;
+      }
+      return argument.substring(i+2);
+  }
+    return null;
+  }
+
+
+
 }
