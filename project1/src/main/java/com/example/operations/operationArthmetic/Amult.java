@@ -13,7 +13,7 @@ public class Amult implements Operation{
             return null;
         }
 
-        double result = 0;
+        double result = 1;
         boolean hasDouble = false;
         boolean hasFloat = false;
 

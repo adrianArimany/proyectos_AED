@@ -13,7 +13,8 @@ public class Asub implements Operation{
             return null;
         }
 
-        double result = 2*(double)args[0];
+        Number nuevo = (Number) args[0];
+        double result = 2*nuevo.doubleValue();
         boolean hasDouble = false;
         boolean hasFloat = false;
 
@@ -25,7 +26,7 @@ public class Asub implements Operation{
                 LoggerManager.logUnsupportedOperation(CATEGORY, arg.getClass());
                 return null;
             }
-        
+
             Number num = (Number) arg;
 
             if (num instanceof Double) hasDouble = true;
@@ -33,10 +34,6 @@ public class Asub implements Operation{
 
             result -= num.doubleValue();
         }
-
-        result = (double) args[0] - (double) args[1];
-        
-
         if (hasDouble) return result;
         if (hasFloat) return (float) result;
         return (int) result;

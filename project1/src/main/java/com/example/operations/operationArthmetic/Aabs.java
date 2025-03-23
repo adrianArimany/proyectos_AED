@@ -25,14 +25,10 @@ public class Aabs implements Operation{
                 LoggerManager.logUnsupportedOperation(CATEGORY, arg.getClass());
                 return null;
             }
-            
-            Number num = (Number) arg;
-
-            if (num instanceof Double) hasDouble = true;
-            if (num instanceof Float) hasFloat = true;
         }
-
-        result = Math.abs((double)args[0]);
+        Number number = (Number) args[0];
+        double numbervalue = number.doubleValue();
+        result = Math.abs(numbervalue);
 
         if (hasDouble) return result;
         if (hasFloat) return (float) result;

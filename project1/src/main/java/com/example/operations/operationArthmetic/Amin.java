@@ -13,7 +13,7 @@ private static final String CATEGORY = "arthmetic";
             return null;
         }
 
-        double result = (double) args[0];
+        double result = ((Number) args[0]).doubleValue();
         boolean hasDouble = false;
         boolean hasFloat = false;
 
@@ -30,8 +30,8 @@ private static final String CATEGORY = "arthmetic";
 
             if (num instanceof Double) hasDouble = true;
             if (num instanceof Float) hasFloat = true;
-            if((double)arg < result ){
-                result = (double) arg;
+            if(((Number)arg).doubleValue() < result ){
+                result = ((Number) arg).doubleValue();
             }
 
         }
