@@ -13,8 +13,8 @@ public class Ares implements Operation{
             return null;
         }
         
-        double cond1 = (double)args[0] - (int)args[0];
-        double cond2 = (double)args[1] - (int)args[1];
+        double cond1 = ((Number)args[0]).doubleValue() - ((Number)args[0]).intValue();
+        double cond2 = ((Number)args[1]).doubleValue() - ((Number)args[1]).intValue();
 
         if((cond1 != 0)||(cond2 != 0)){
             LoggerManager.logWarning(CATEGORY, "must be integers");
@@ -30,7 +30,7 @@ public class Ares implements Operation{
             } 
         }
 
-        result = (int) args[0] % (int) args[1];
+        result = ((Number)args[0]).intValue() % ((Number)args[1]).intValue();
         
         return result;
     }
