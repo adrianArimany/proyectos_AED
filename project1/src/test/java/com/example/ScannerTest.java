@@ -83,4 +83,39 @@ public class ScannerTest {
         scanner.HashDefun(line);
         assertEquals("( X Y ) ( + X Y )",scanner.getFunctionSet().get("SUMA"));
     }
+
+    @Test
+    public void testgetNumberofParameters() {
+        Scanner scanner = new Scanner();
+        String line = "(DEFUN SUMA (X Y) (+ X Y))";
+        scanner.HashDefun(line);
+        assertEquals(2, scanner.getNumberofParameters("SUMA"));
+    }
+
+    @Test
+    public void testhasAFunction() {
+        Scanner scanner = new Scanner();
+        String line = "(DEFUN SUMA (X Y) (+ X Y))";
+        scanner.HashDefun(line);
+        String linetest = "(SUMA 5 2)";
+        assertEquals(true, scanner.hasafunction(linetest));
+    }
+
+    @Test
+    public void testValidateFunctionTrue() {
+        Scanner scanner = new Scanner();
+        String line = "(DEFUN SUMA (X Y) (+ X Y))";
+        scanner.HashDefun(line);
+        String linetest = "(SUMA 5 2)";
+        assertEquals(true, scanner.ValidateFunction(linetest));
+    }
+
+    @Test
+    public void testValidateFunctionFalse() {
+        Scanner scanner = new Scanner();
+        String line = "(DEFUN SUMA (X Y) (+ X Y))";
+        scanner.HashDefun(line);
+        String linetest = "(SUMA 5 2 6)";
+        assertEquals(false, scanner.ValidateFunction(linetest));
+    }
 }

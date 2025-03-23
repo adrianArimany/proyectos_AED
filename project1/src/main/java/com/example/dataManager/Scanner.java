@@ -306,4 +306,35 @@ public class Scanner {
       }
     }
   }
+
+  public int getNumberofParameters(String FunctionName){
+    String argument = FunctionSet.get(FunctionName);
+    int i = 0;
+    int numberofparameters = 0;
+    while(argument.charAt(i) != ')'){
+      if(!Character.isWhitespace(argument.charAt(i)) && argument.charAt(i) != '('){
+        numberofparameters++;
+      }
+      i += 1;
+    }
+    return numberofparameters;
+  }
+
+  public boolean hasafunction(String line) {
+    if(FunctionSet.containsKey(runLine(line).get(1).getLexeme())){
+      return true;
+    }
+    return false;
+  }
+
+  public boolean ValidateFunction(String line) {
+    if(hasafunction(line)){
+      String keytofunction = runLine(line).get(1).getLexeme();
+      int parametersofcandidate = runLine(line).size() - 3;
+      if(parametersofcandidate == getNumberofParameters(keytofunction)){
+        return true;
+      }
+    }
+    return false;
+  }
 }

@@ -21,6 +21,7 @@ public class OperationFactory {
             case "ABS" -> (Operation) new Aabs();
             case "MAX" -> (Operation) new Amax();
             case "MIN" -> (Operation) new Amin();
+            case "MOD" -> (Operation) new Ares();
             default -> throw new IllegalArgumentException();
         };
     }
