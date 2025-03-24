@@ -1,5 +1,6 @@
 package com.example.objectInterpreter;
 
 public interface Iinterpreter {
-    Object compile(String code);
+    Object evaluate() throws Exception;
+    Object evalExpression() throws Exception;
 }
