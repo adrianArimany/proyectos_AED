@@ -6,6 +6,14 @@ import com.example.utils.LoggerManager;
 public class Amult implements Operation{
     private static final String CATEGORY = "arthmetic";
     
+    /**
+     * This method implements the "*" operator.
+     * It takes two or more operands and returns their product.
+     * The result is a double if the product of the numbers is larger than the maximum int value,
+     * a float if it is larger than the maximum long value, and an integer if it fits within the maximum int value.
+     * If any of the operands are null, a log message is written and null is returned.
+     * If any of the operands are not numbers, a log message is written and null is returned.
+     */
     @Override
     public Object execute(Object... args) {
         if (args.length < 2) {

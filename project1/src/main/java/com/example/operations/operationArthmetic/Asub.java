@@ -6,6 +6,16 @@ import com.example.utils.LoggerManager;
 public class Asub implements Operation{
     private static final String CATEGORY = "arthmetic";
 
+    /**
+     * Subtract all the arguments to the first argument.
+     * This operation needs at least two arguments.
+     * If the arguments are not numbers, the operation is not supported.
+     * If the arguments are a mix of double and float, the result is a double.
+     * If the arguments are only float, the result is a float.
+     * If the arguments are only int, the result is an int.
+     * @param args the arguments to the operation
+     * @return the result of the operation or null if the operation is not supported
+     */
     @Override
     public Object execute(Object... args){
         if (args.length < 2) {

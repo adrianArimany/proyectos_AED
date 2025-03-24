@@ -6,6 +6,23 @@ import com.example.utils.LoggerManager;
 public class Asum implements Operation {
     private static final String CATEGORY = "arthmetic";
     
+/**
+ * Executes the sum operation on the provided arguments.
+ * 
+ * This method expects at least two numerical operands. It iterates through 
+ * the provided arguments, ensuring each is a non-null instance of Number.
+ * The numbers are summed, and the result is returned. The method handles 
+ * different number types (Double, Float, Integer) and returns the result 
+ * in the most appropriate type based on the input. 
+ * 
+ * If any argument is null or not a Number, a warning is logged and 
+ * null is returned. If fewer than two arguments are provided, a warning 
+ * is logged, and null is returned.
+ * 
+ * @param args The numbers to be summed.
+ * @return The sum of the numbers, with the type of the result dependent 
+ *         on the input types (Double, Float, or Integer).
+ */
     @Override
     public Object execute(Object... args) {
         if (args.length < 2) {

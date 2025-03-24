@@ -6,7 +6,16 @@ import com.example.utils.LoggerManager;
 public class Amax implements Operation{
     private static final String CATEGORY = "arthmetic";
 
-     @Override
+/**
+ * Executes the operation to find the maximum value among the provided arguments.
+ *
+ * @param args The arguments to evaluate, must contain at least one operand.
+ * @return The maximum value among the arguments, returned as a Double if any 
+ *         argument is a Double, as a Float if any argument is a Float, 
+ *         otherwise as an Integer. Returns null if the input is invalid.
+ * Logs a warning if there are no operands or if any operand is null or not a Number.
+ */
+    @Override
     public Object execute(Object... args) {
         if (args.length < 1) {
             LoggerManager.logWarning(CATEGORY, "must have at least one operand");

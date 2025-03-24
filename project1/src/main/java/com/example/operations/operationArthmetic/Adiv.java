@@ -6,6 +6,13 @@ import com.example.utils.LoggerManager;
 public class Adiv implements Operation{
     private static final String CATEGORY = "arthmetic";
 
+    /**
+     * Performs division on the given arguments.
+     * 
+     * @param args The arguments to the division operation. The operation will be performed in the order given.
+     * 
+     * @return The result of the division operation.
+     */
     @Override
     public Object execute(Object... args){
         if (args.length > 2) {

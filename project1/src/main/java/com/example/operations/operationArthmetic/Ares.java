@@ -6,6 +6,12 @@ import com.example.utils.LoggerManager;
 public class Ares implements Operation{
     private static final String CATEGORY = "arthmetic";
 
+    /**
+     * 
+     * @param args
+     * @return The remainder of the division between the two given numbers.
+     * Only works with two integer numbers.
+     */
     @Override
     public Object execute(Object... args){
         if (!(args.length == 2)) {
