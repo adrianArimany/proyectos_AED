@@ -311,8 +311,14 @@ public class Scanner {
     if (normalized.equals("EQ") || normalized.equals("EQL") || normalized.equals("EQUAL")) {
         return new Token(TokenType.EQUALITY, candidate); // Or TokenType.IDENTIFIER if not special
     }
+    // Special conditionals in Lisp
+    if (normalized.equals("IF")) {
+        return new Token(TokenType.BOOLEAN, candidate); // Or TokenType.IDENTIFIER if not special
+    }
     return null;
-}
+  }
 
   
-  }
+
+
+}

@@ -7,6 +7,7 @@ import com.example.operations.operationArthmetic.Adiv;
 import com.example.operations.operationArthmetic.Amult;
 import com.example.operations.operationArthmetic.Asub;
 import com.example.operations.operationArthmetic.Asum;
+import com.example.operations.operationsBoolean.BEqual;
 import com.example.operations.operationsConditional.CEqual;
 import com.example.operations.operationsConditional.CGreaterThan;
 import com.example.operations.operationsConditional.CGreaterThanOrEqual;
@@ -28,7 +29,7 @@ public class OperationFactory {
             case "=" -> new CEqual();
             case "<=" -> new CLessThanOrEqual();
             case ">=" -> new CGreaterThanOrEqual();
-            //case "IF" -> new IfOperator();
+            case "EQUAL" -> new BEqual();
             default -> null;    
         };
     }
