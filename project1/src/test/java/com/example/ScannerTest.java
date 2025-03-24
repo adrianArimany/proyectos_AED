@@ -133,7 +133,17 @@ public class ScannerTest {
         Scanner scanner = new Scanner();
         String line = "(DEFUN SUMA (X Y) (+ X Y))";
         scanner.HashDefun(line);
+        assertEquals("( + X Y )", scanner.FunctionArgument("SUMA"));
+    }
+
+    @Test
+    public void testValuateFunction(){
+        Scanner scanner = new Scanner();
+        String line = "(DEFUN SUMA (X Y) (+ X Y))";
+        scanner.HashDefun(line);
         String linetest = "(SUMA 5 2)";
-        assertEquals("( + X Y )", scanner.FunctionArgument(linetest));
+        assertEquals("5", scanner.ValuateInFunction(linetest).get(2).getLexeme());
+        assertEquals("2", scanner.ValuateInFunction(linetest).get(3).getLexeme());
+
     }
 }

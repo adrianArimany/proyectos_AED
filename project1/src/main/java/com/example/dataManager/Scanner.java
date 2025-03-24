@@ -390,18 +390,44 @@ public class Scanner {
 
   /**
    * Método que se utilizará para obtener unicamente el argumento o regla de asignación de una función
-   * @param line
+   * @param keyToFunction
    * @return
    */
-  public String FunctionArgument(String line) {
-    if (ValidateFunction(line)) {
-      String argument = FunctionSet.get(runLine(line).get(1).getLexeme());
+  public String FunctionArgument(String keyToFunction) {
+      String argument = FunctionSet.get(keyToFunction);
       int i = 0;
       while(argument.charAt(i) != ')') {
         i+=1;
       }
       return argument.substring(i+2);
   }
+
+  /**
+   * Método para colocar los valores ingresados a una función y tokenizar esa nueva cadena
+   * @param line
+   * @return
+   */
+  public ArrayList<Token> ValuateInFunction(String line) {
+
+    if(hasafunction(line)){
+
+      ArrayList<Token> tovalue = runLine(line);
+      String keyToFunction = tovalue.get(1).getLexeme();
+      ArrayList<Token> tokens = runLine(FunctionArgument(keyToFunction));
+      tovalue.remove(0);
+      tovalue.remove(0);
+      tovalue.remove(tovalue.size()-1);
+
+      for(int i = 0; i< tokens.size(); i++){
+        for(int j = 0; j < tovalue.size(); j++){
+          if(tokens.get(i).getLexeme().equals(String.valueOf(listOfParameters(keyToFunction).get(j)))){
+            tokens.set(i,tovalue.get(j));
+          }
+        }
+      }
+      return tokens;
+    }
+
     return null;
   }
 
