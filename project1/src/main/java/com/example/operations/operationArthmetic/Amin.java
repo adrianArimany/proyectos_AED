@@ -6,6 +6,12 @@ import com.example.utils.LoggerManager;
 public class Amin implements Operation{
 private static final String CATEGORY = "arthmetic";
 
+    /**
+     * Execute the MIN operation. The MIN operation takes a variable number of
+     * arguments and returns the smallest one. If there are no arguments, it
+     * logs a warning and returns null. If any argument is null or not a number,
+     * it logs an unsupported operation warning and returns null.
+     */
      @Override
     public Object execute(Object... args) {
         if (args.length < 1) {

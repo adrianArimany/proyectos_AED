@@ -3,6 +3,13 @@ package com.example.operations.operationsBoolean;
 import com.example.operations.Operation;
 
 public class BEqual implements Operation {
+    /**
+     * Checks if two objects are equal.
+     * 
+     * @param operands
+     *            The two objects to compare.
+     * @return True if the objects are equal, false otherwise.
+     */
     @Override
     public Object execute(Object... operands) {
         if (operands.length != 2) {

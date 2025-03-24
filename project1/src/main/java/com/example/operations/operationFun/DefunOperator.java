@@ -17,6 +17,18 @@ public class DefunOperator implements Operation {
      *   operand[1]: parameter list (could be a List<String> or another structure)
      *   operand[2]: function body (could be an expression or list of expressions)
      */
+
+    
+    /**
+     * Executes the DEFUN operation.
+     * Expected operands:
+     *   operand[0]: function name (String)
+     *   operand[1]: parameter list (List<String>)
+     *   operand[2]: function body (Object)
+     * 
+     * @param operands The operands to the DEFUN operation.
+     * @return The result of executing the DEFUN operation.
+     */
     @Override
     public Object execute(Object... operands) {
         if (operands.length < 3) {

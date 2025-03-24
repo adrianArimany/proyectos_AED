@@ -16,6 +16,12 @@ import com.example.operations.operationsConditional.CLessThanOrEqual;
 
 public class OperationFactory {
 
+    /**
+     * Gets an Operation instance given its operator string.
+     * 
+     * @param operator the operator string to get the corresponding Operation instance
+     * @return the Operation instance, or null if not found
+     */
     public static Operation getOperation(String operator) {
         return switch (operator.toUpperCase()) {
             case "+" -> new Asum();

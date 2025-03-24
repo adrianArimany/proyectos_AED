@@ -6,6 +6,12 @@ import com.example.utils.LoggerManager;
 public class Aabs implements Operation{
     private static final String CATEGORY = "arthmetic";
 
+        /**
+         * Calculate the absolute value of a number.
+         * 
+         * @param args The only argument should be a number, either an instance of Double or Float.
+         * @return The absolute value of the argument.
+         */
      @Override
     public Object execute(Object... args) {
         if (args.length != 1) {
