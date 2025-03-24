@@ -164,6 +164,34 @@ public class interpreterLisp implements  Iinterpreter{
         }
     }
 
+    /**
+     * Finds the end index (exclusive) of the expression starting at 'start'.
+     * If the token at 'start' is LPAREN, returns the index after its matching RPAREN;
+     * otherwise, returns start+1.
+     */
+    private int findEndOfExpression(int start) throws Exception {
+        int index = start;
+        if (tokens.get(index).getTokenType() == TokenType.LPAREN) {
+            int count = 0;
+            while (index < tokens.size()) {
+                Token t = tokens.get(index);
+                if (t.getTokenType() == TokenType.LPAREN) {
+                    count++;
+                } else if (t.getTokenType() == TokenType.RPAREN) {
+                    count--;
+                    if (count == 0) {
+                        return index + 1;
+                    }
+                }
+                index++;
+            }
+            throw new Exception("Unbalanced parentheses in expression.");
+        } else {
+            return start + 1;
+        }
+    }
+
+
 
 
     @Override
