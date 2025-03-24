@@ -191,6 +191,33 @@ public class interpreterLisp implements  Iinterpreter{
         }
     }
 
+    /**
+     * Evaluates a function body by substituting parameter names with operand values.
+     *
+     * @param functionBody The function body as a String.
+     * @param parameterNames The list of parameter names.
+     * @param operandValues The list of operand values.
+     * @return The result of evaluating the substituted function body.
+     * @throws Exception if evaluation fails.
+     */
+    private Object evaluateFunctionBody(String functionBody, List<String> parameterNames, List<Object> operandValues) throws Exception {
+        String substitutedBody = functionBody;
+        for (int i = 0; i < parameterNames.size(); i++) {
+            String param = parameterNames.get(i);
+            Object value = operandValues.get(i);
+            substitutedBody = substitutedBody.replaceAll("\\b" + param + "\\b", value.toString());
+        }
+
+        Scanner scanner = new Scanner();
+        List<Token> bodyTokens = scanner.runLine(substitutedBody);
+        interpreterLisp bodyInterpreter = new interpreterLisp(bodyTokens, placeholderCache);
+        Object result = bodyInterpreter.evaluate();
+
+        return result;
+    }
+
+
+
 
 
 
