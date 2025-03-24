@@ -3,6 +3,8 @@ package com.example.dataManager;
 //import com.example.dataManager.Transition;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import com.example.utils.LoggerManager;
 import com.example.utils.TokenType;
@@ -52,32 +54,19 @@ public class Scanner {
         true));
     this.finiteStateMachines.add(new FSM(operationsArithmetic, TokenType.OPERANDARITHMETIC));
 
-    HashMap<Integer, Transition> integers = new HashMap<>();
-    integers.put(
-        0, new Transition(new int[] {
-            (int) '1',
-            (int) '2',
-            (int) '3',
-            (int) '4',
-            (int) '5',
-            (int) '6',
-            (int) '7',
-            (int) '8',
-            (int) '9', }, 1, true));
-
-    integers.put(1, new Transition(new int[] {
-        (int) '0',
-        (int) '1',
-        (int) '2',
-        (int) '3',
-        (int) '4',
-        (int) '5',
-        (int) '6',
-        (int) '7',
-        (int) '8',
-        (int) '9',
-    }, 1, true));
-    this.finiteStateMachines.add(new FSM(integers, TokenType.NUMBER));
+    Map<Integer, List<Transition>> numbers = new HashMap<>();
+    List<Transition> state0 = new ArrayList<>();
+    state0.add(new Transition(new int[]{'1','2','3','4','5','6','7','8','9','0'}, 1, true));
+    numbers.put(0, state0);
+    List<Transition> state1 = new ArrayList<>();
+    state1.add(new Transition(new int[]{'0','1','2','3','4','5','6','7','8','9'}, 1, true));
+    state1.add(new Transition(new int[]{'.'}, 2, false));
+    numbers.put(1, state1); 
+    List<Transition> state2 = new ArrayList<>();
+    state2.add(new Transition(new int[]{'0','1','2','3','4','5','6','7','8','9'}, 2, true));
+    numbers.put(2, state2);
+    this.finiteStateMachines.add(new FSM(numbers, TokenType.NUMBER));
+    
 
     //The problem with this machine is that it doesn't considers capital letter, so words like poTato might  appear, and it would ignore the T.
     
@@ -221,7 +210,7 @@ public class Scanner {
 
     for (int i = 0; i < line.length(); i++) {
       char ch = line.charAt(i);
-//uses the function defun or setq. 
+      //uses the function defun or setq. 
         
       // When we hit a delimiter, process the token from tokenStart to i.
       if (ch == ' ' || ch == '(' || ch == ')') {
@@ -233,9 +222,9 @@ public class Scanner {
         }
         // If the delimiter is a parenthesis, add it as its own token.
         if (ch == '(') {
-          tokens.add(new Token(TokenType.PARENTESIS, "("));
+          tokens.add(new Token(TokenType.LPAREN, "("));
         } else if (ch == ')') {
-          tokens.add(new Token(TokenType.PARENTESIS, ")"));
+          tokens.add(new Token(TokenType.RPAREN, ")"));
         }
         
         // Set tokenStart to the character after the delimiter.
@@ -261,28 +250,43 @@ public class Scanner {
    * Otherwise, returns an error token.
    */
   private Token processCandidate(String candidate) {
-    
-    //Special Token:
-    //Token DEFUN to create functions
+    // Check for reserved tokens first (like DEFUN or SETQ)
     Token reserved = isReserved(candidate);
     if (reserved != null) {
-      return reserved;
+        return reserved;
     }
     
+    Token bestToken = null;
+    int bestLength = 0;
     
-    
+    // For each FSM, try to consume the entire candidate character by character.
     for (FSM fsm : finiteStateMachines) {
-      fsm.reset();
-      for (char c : candidate.toCharArray()) {
-        fsm.next((int)c);
-      }
-      if (fsm.isFinalState()) {
-        return new Token(fsm.tokenName, candidate);
-      }
+        fsm.reset();
+        int lastFinalIndex = -1;
+        for (int i = 0; i < candidate.length(); i++) {
+            fsm.next((int) candidate.charAt(i));
+            if (fsm.isFinalState()) {
+                lastFinalIndex = i + 1; // record index of last final state
+            }
+        }
+        // If the FSM consumed more characters than any previous one, record it.
+        if (lastFinalIndex > bestLength) {
+            bestLength = lastFinalIndex;
+            bestToken = new Token(fsm.tokenName, candidate.substring(0, lastFinalIndex));
+        }
     }
+    
+    // If a best match was found, return it.
+    if (bestToken != null) {
+        return bestToken;
+    }
+    
+    // Otherwise, log a warning and return an error token.
     LoggerManager.logWarning(CATEGORY, "Grammatical error: unrecognized token \"" + candidate + "\"");
     return new Token(TokenType.ERROR, candidate);
-  }
+}
+
+
   
 
 
@@ -307,8 +311,14 @@ public class Scanner {
     if (normalized.equals("EQ") || normalized.equals("EQL") || normalized.equals("EQUAL")) {
         return new Token(TokenType.EQUALITY, candidate); // Or TokenType.IDENTIFIER if not special
     }
+    // Special conditionals in Lisp
+    if (normalized.equals("IF")) {
+        return new Token(TokenType.BOOLEAN, candidate); // Or TokenType.IDENTIFIER if not special
+    }
     return null;
-}
+  }
 
   
-  }
+
+
+}
