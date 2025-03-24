@@ -17,8 +17,8 @@ import javax.swing.JTextArea;
 import com.example.dataManager.Scanner;
 import com.example.dataManager.Token;
 import com.example.objectInterpreter.interpreterLisp;
-import com.example.operations.OperationFun.DefunOperator;
-import com.example.operations.OperationFun.SetqOperator;
+import com.example.operations.operationFun.DefunOperator;
+import com.example.operations.operationFun.SetqOperator;
 import com.example.utils.fileUtil;
 
 /**
