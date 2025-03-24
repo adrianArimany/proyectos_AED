@@ -38,3 +38,783 @@ Mar 10, 2025 1:48:10 PM com.example.utils.LoggerManager logWarning
 WARNING: Grammatical error: unrecognized token "DEF2N"
 Mar 10, 2025 1:57:33 PM com.example.utils.LoggerManager logWarning
 WARNING: Grammatical error: unrecognized token "SETQR"
+Mar 23, 2025 6:44:22 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token ""Some"
+Mar 23, 2025 6:44:22 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "Comment:"
+Mar 23, 2025 6:44:22 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "0,"
+Mar 23, 2025 6:44:22 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "N-1"
+Mar 23, 2025 6:44:22 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "0""
+Mar 23, 2025 6:44:28 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token ""Some"
+Mar 23, 2025 6:44:28 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "Comment:"
+Mar 23, 2025 6:44:28 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "0,"
+Mar 23, 2025 6:44:29 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "N-1"
+Mar 23, 2025 6:44:29 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "0""
+Mar 23, 2025 7:46:05 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "5.0"
+Mar 23, 2025 7:46:05 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "5.0"
+Mar 23, 2025 7:47:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "5.0"
+Mar 23, 2025 7:47:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "5.0"
+Mar 23, 2025 7:47:24 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "5.0"
+Mar 23, 2025 7:47:24 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "5.0"
+Mar 23, 2025 7:52:16 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:52:16 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:52:16 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:52:36 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:52:36 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:52:36 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:52:42 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:52:42 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:52:50 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:52:50 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:52:50 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:52:55 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:52:57 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:52:57 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:53:04 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:53:04 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:53:04 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:53:15 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:53:15 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:53:31 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:53:31 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:53:31 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:54:48 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "%"
+Mar 23, 2025 7:55:05 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 7:55:05 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 7:55:05 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 7:55:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 7:55:13 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 7:55:13 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 7:55:21 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 7:55:21 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 7:55:21 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 7:55:24 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 7:55:24 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:03:45 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "5.0"
+Mar 23, 2025 8:03:45 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "5.0"
+Mar 23, 2025 8:03:54 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:03:54 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:03:54 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:03:58 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:03:58 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:03:58 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:04:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:04:03 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:04:03 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:04:32 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:04:36 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:04:36 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:04:43 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:04:44 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:04:44 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:04:51 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:04:51 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:04:51 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:04:57 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:04:58 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:04:58 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:15:17 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:15:17 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:15:17 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:15:22 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:15:22 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:15:22 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:18:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:18:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:18:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:18:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:18:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:18:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:18:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:18:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:18:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:18:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:18:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:18:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:18:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:18:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:18:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:18:55 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:18:55 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:18:59 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "5.0"
+Mar 23, 2025 8:18:59 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "5.0"
+Mar 23, 2025 8:19:05 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:19:05 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:19:05 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:19:07 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:19:07 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:19:12 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:19:12 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:19:12 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:19:14 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:19:14 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:19:37 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:19:58 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:19:59 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:20:04 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:20:04 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:20:04 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:20:05 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:20:05 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:21:28 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token ""Some"
+Mar 23, 2025 8:21:28 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "Comment:"
+Mar 23, 2025 8:21:28 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "0,"
+Mar 23, 2025 8:21:28 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "N-1"
+Mar 23, 2025 8:21:28 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "0""
+Mar 23, 2025 8:21:36 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token ""Some"
+Mar 23, 2025 8:21:36 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "Comment:"
+Mar 23, 2025 8:21:36 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "0,"
+Mar 23, 2025 8:21:36 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "N-1"
+Mar 23, 2025 8:21:36 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "0""
+Mar 23, 2025 8:21:37 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token ""Some"
+Mar 23, 2025 8:21:37 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "Comment:"
+Mar 23, 2025 8:21:37 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "0,"
+Mar 23, 2025 8:21:37 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "N-1"
+Mar 23, 2025 8:21:37 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "0""
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token ""Some"
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "Comment:"
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "0,"
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$-1"
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "0""
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token ""Some"
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "Comment:"
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "0,"
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$-1"
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "0""
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token ""Some"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "Comment:"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "0,"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$-1"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "0""
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token ""Some"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "Comment:"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "0,"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$-1"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "0""
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:23 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:23 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:23 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:23 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:25 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:25 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:22:25 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:23:38 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "FARENHEIT-CELSIUS"
+Mar 23, 2025 8:23:38 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "1.8"
+Mar 23, 2025 8:23:41 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "FARENHEIT-CELSIUS"
+Mar 23, 2025 8:23:41 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "3.0"
+Mar 23, 2025 8:23:41 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "1.8"
+Mar 23, 2025 8:23:47 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "FARENHEIT-CELSIUS"
+Mar 23, 2025 8:23:47 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "1.8"
+Mar 23, 2025 8:23:50 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "FARENHEIT-CELSIUS"
+Mar 23, 2025 8:23:50 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:23:50 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "1.8"
+Mar 23, 2025 8:23:56 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "FARENHEIT-CELSIUS"
+Mar 23, 2025 8:23:56 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:23:56 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:23:56 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "1.8"
+Mar 23, 2025 8:23:58 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "FARENHEIT-CELSIUS"
+Mar 23, 2025 8:23:58 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:23:58 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "1.8"
+Mar 23, 2025 8:24:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:24:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:24:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "1.8"
+Mar 23, 2025 8:24:11 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:24:11 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "1.8"
+Mar 23, 2025 8:24:28 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:24:28 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:24:28 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "1.8"
+Mar 23, 2025 8:24:29 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:24:29 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "1.8"
+Mar 23, 2025 8:24:40 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:24:40 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:24:40 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "1.8"
+Mar 23, 2025 8:24:43 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:24:43 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "1.8"
+Mar 23, 2025 8:24:47 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:24:47 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:24:47 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "1.8"
+Mar 23, 2025 8:24:49 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:24:49 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "1.8"
+Mar 23, 2025 8:25:25 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:25:25 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:25:25 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "1.8"
+Mar 23, 2025 8:25:28 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:25:28 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "1.8"
+Mar 23, 2025 8:25:30 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:25:30 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:25:30 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "1.8"
+Mar 23, 2025 8:25:32 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:25:32 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "1.8"
+Mar 23, 2025 8:42:47 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:42:47 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:42:47 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:42:51 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:42:51 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:42:59 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:42:59 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:42:59 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:43:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:43:02 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:43:02 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:43:04 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:43:04 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:43:04 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:43:08 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:43:08 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:48:45 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:48:45 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:48:45 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:48:54 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:48:54 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:48:54 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:48:56 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:48:56 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:54:34 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:54:34 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:54:34 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:54:36 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:54:36 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:55:30 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:55:30 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:55:37 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:55:44 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:55:44 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 8:55:46 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 8:55:46 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "2.0"
+Mar 23, 2025 9:02:23 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:02:33 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:02:38 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:02:42 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:02:45 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "20"
+Mar 23, 2025 9:02:48 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:02:51 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "20"
+Mar 23, 2025 9:02:56 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:03:02 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:03:13 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:03:13 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:03:13 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:03:14 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "22"
+Mar 23, 2025 9:03:16 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "22.0"
+Mar 23, 2025 9:03:16 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "22.0"
+Mar 23, 2025 9:03:54 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:03:54 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:03:54 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:03:59 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "21"
+Mar 23, 2025 9:04:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "21.0"
+Mar 23, 2025 9:04:00 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "21.0"
+Mar 23, 2025 9:04:11 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "run2"
+Mar 23, 2025 9:04:11 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:04:11 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:04:11 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:04:13 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "RUN2"
+Mar 23, 2025 9:04:17 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "run2"
+Mar 23, 2025 9:04:17 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:04:17 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:04:17 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:04:18 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "RUN2"
+Mar 23, 2025 9:04:19 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "22.0"
+Mar 23, 2025 9:04:19 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "22.0"
+Mar 23, 2025 9:04:46 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:04:46 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:04:46 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:04:48 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "10"
+Mar 23, 2025 9:04:50 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "10.0"
+Mar 23, 2025 9:04:50 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "10.0"
+Mar 23, 2025 9:06:07 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:06:07 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:06:07 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:06:15 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:06:15 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:06:15 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:06:20 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:06:20 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:06:20 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:06:23 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "20"
+Mar 23, 2025 9:06:27 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "20.0"
+Mar 23, 2025 9:06:27 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "20.0"
+Mar 23, 2025 9:06:48 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:06:48 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:06:48 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:06:51 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "10"
+Mar 23, 2025 9:06:52 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "10.0"
+Mar 23, 2025 9:06:52 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "10.0"
+Mar 23, 2025 9:07:02 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:07:02 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:07:02 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:07:04 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "10.0"
+Mar 23, 2025 9:07:06 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "10.0"
+Mar 23, 2025 9:07:06 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "10.0"
+Mar 23, 2025 9:07:25 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:07:25 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:07:25 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:07:30 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "10.0"
+Mar 23, 2025 9:07:32 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "10.2"
+Mar 23, 2025 9:07:32 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "10.2"
+Mar 23, 2025 9:10:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:10:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:10:01 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:10:04 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:10:04 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:10:04 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:10:08 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:10:08 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:10:08 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:10:14 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "20"
+Mar 23, 2025 9:10:16 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "20.0"
+Mar 23, 2025 9:10:16 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "20.0"
+Mar 23, 2025 9:12:52 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:12:52 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:12:52 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:12:54 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "20"
+Mar 23, 2025 9:12:55 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "20.0"
+Mar 23, 2025 9:12:55 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "20.0"
+Mar 23, 2025 9:20:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:20:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:20:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:20:25 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:20:25 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:20:25 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:21:35 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:21:35 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:21:35 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:21:49 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:21:49 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:21:49 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:23:04 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:23:04 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:23:04 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:37:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:37:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:37:10 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:37:15 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:37:15 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:37:15 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:37:20 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:37:20 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:37:20 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:39:06 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:39:06 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:39:06 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:39:12 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:39:12 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:39:12 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:39:23 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:39:23 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 9:39:23 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token "$"
+Mar 23, 2025 10:03:03 PM com.example.utils.LoggerManager logWarning
+WARNING: Grammatical error: unrecognized token ""Some"

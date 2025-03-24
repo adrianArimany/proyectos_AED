@@ -1,0 +1,1 @@
+(DEFUN FARENHEIT-CELSIUS (F) (/(- F 32) 1.8))

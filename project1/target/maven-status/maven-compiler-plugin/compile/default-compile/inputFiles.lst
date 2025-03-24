@@ -2,8 +2,10 @@
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/operations/operationArthmetic/Amult.java
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/operations/operationArthmetic/Adiv.java
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/operations/operationArthmetic/Asum.java
+/home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/operations/OperationFun/DefunOperator.java
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/objectInterpreter/Iinterpreter.java
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/factory/OperationFactory.java
+/home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/operations/OperationFun/SetqOperator.java
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/operations/operationArthmetic/Amin.java
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/App.java
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/dataManager/Token.java
@@ -15,6 +17,7 @@
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/operations/operationArthmetic/Ares.java
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/dataManager/Scanner.java
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/operations/operationArthmetic/Amax.java
+/home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/gui/FileManagerGUI.java
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/operations/operationArthmetic/Asub.java
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/operations/operationArthmetic/Aabs.java
 /home/adrianarimany/Documents/UVG/Year_2/Algs_Data-Structure/proyectos_AED/project1/src/main/java/com/example/utils/TokenType.java

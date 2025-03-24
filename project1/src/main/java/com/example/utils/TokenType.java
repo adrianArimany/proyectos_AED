@@ -7,8 +7,9 @@ package com.example.utils;
 
 
 public enum TokenType {
- PARENTESIS, // ( )
- 
+ //PARENTESIS, // ( )
+ LPAREN, // (
+ RPAREN, // )
  OPERANDARITHMETIC, // + - * / %
  
  CONDITIONALS, // < > = 

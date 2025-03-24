@@ -14,11 +14,10 @@ import com.example.gui.FileManagerGUI;
  */
 public class App 
 {
-    public static void main( String[] args )
-    {
+    public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            FileManagerGUI gui = new FileManagerGUI();
-            gui.show();
+            new FileManagerGUI().setVisible(true);
         });
     }
 }
+
