@@ -29,6 +29,8 @@ public class OperationFactory {
             case "=" -> new CEqual();
             case "<=" -> new CLessThanOrEqual();
             case ">=" -> new CGreaterThanOrEqual();
+            case "EQ" -> new BEqual();
+            case "EQL" -> new BEqual();
             case "EQUAL" -> new BEqual();
             default -> null;    
         };
