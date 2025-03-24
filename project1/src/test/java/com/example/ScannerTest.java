@@ -25,11 +25,11 @@ public class ScannerTest {
         String line = "(+ 6 3)";
         ArrayList<Token> tokens = scanner.runLine(line);
         assertEquals(5, tokens.size());
-        assertEquals(TokenType.PARENTESIS, tokens.get(0).getTokenType());
+        assertEquals(TokenType.LPAREN, tokens.get(0).getTokenType());
         assertEquals(TokenType.OPERANDARITHMETIC, tokens.get(1).getTokenType());
         assertEquals(TokenType.NUMBER, tokens.get(2).getTokenType());
         assertEquals(TokenType.NUMBER, tokens.get(3).getTokenType());
-        assertEquals(TokenType.PARENTESIS, tokens.get(4).getTokenType());
+        assertEquals(TokenType.RPAREN, tokens.get(4).getTokenType());
     }
 
 
@@ -39,9 +39,9 @@ public class ScannerTest {
         String line = "(DEFUN )";
         ArrayList<Token> tokens = scanner.runLine(line);
         assertEquals(3, tokens.size());
-        assertEquals(TokenType.PARENTESIS, tokens.get(0).getTokenType());
+        assertEquals(TokenType.LPAREN, tokens.get(0).getTokenType());
         assertEquals(TokenType.FUN, tokens.get(1).getTokenType());
-        assertEquals(TokenType.PARENTESIS, tokens.get(2).getTokenType());
+        assertEquals(TokenType.RPAREN, tokens.get(2).getTokenType());
     }
 
     @Test
@@ -50,8 +50,8 @@ public class ScannerTest {
         String line = "(SetQ )";
         ArrayList<Token> tokens = scanner.runLine(line);
         assertEquals(3, tokens.size());
-        assertEquals(TokenType.PARENTESIS, tokens.get(0).getTokenType());
+        assertEquals(TokenType.LPAREN, tokens.get(0).getTokenType());
         assertEquals(TokenType.FUN, tokens.get(1).getTokenType());
-        assertEquals(TokenType.PARENTESIS, tokens.get(2).getTokenType());
+        assertEquals(TokenType.RPAREN, tokens.get(2).getTokenType());
     } 
 }
