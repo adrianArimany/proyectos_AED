@@ -15,9 +15,10 @@ import com.example.operations.OperationFun.DefunOperator;
 import com.example.utils.TokenType;
 
 /**
- * Syntax Tree 
  * interpreterLisp
  * 
+ * The approach is by directly gather the TOKEN and evaluate each TOKEN, and there are some special cases for the interpreter, 
+ * these are IF and DEFUN.
  */
 public class interpreterLisp implements  Iinterpreter{
     private Map<String, Object> placeholderCache = new HashMap<>(); // so the code can recognize the parameter in the defun,

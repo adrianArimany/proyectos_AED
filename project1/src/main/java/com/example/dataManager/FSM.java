@@ -72,7 +72,6 @@ public class FSM {
         return this.isFinalState;
     }
     
-    // Optionally, a getter for debugging current state.
     public int getCurrentState() {
         return this.currentState;
     }
