@@ -29,7 +29,13 @@ public class interpreterLisp implements  Iinterpreter{
         this(tokens, new HashMap<>()); // Creates a new, empty placeholder cache.
     }
 
-    // Starts the evaluation process.
+    
+    /**
+     * Evaluates the expression specified by the tokens.
+     * 
+     * @return The result of evaluating the expression.
+     * @throws Exception if evaluation fails.
+     */
     @Override
     public Object evaluate() throws Exception {
         placeholderCache.clear(); // Clear the cache for each new evaluation.
@@ -39,7 +45,12 @@ public class interpreterLisp implements  Iinterpreter{
         return evalExpression();
     }
 
-    // Recursively evaluates an expression.
+    /**
+     * Evaluates the expression specified by the tokens.
+     * 
+     * @return The result of evaluating the expression.
+     * @throws Exception if evaluation fails.
+     */
     @Override
     public Object evalExpression() throws Exception {
         Token currentToken = tokens.get(current);
@@ -168,6 +179,9 @@ public class interpreterLisp implements  Iinterpreter{
      * Finds the end index (exclusive) of the expression starting at 'start'.
      * If the token at 'start' is LPAREN, returns the index after its matching RPAREN;
      * otherwise, returns start+1.
+     * 
+     * @param start The start index of the expression.
+     * @return The end index of the expression.
      */
     private int findEndOfExpression(int start) throws Exception {
         int index = start;
@@ -220,6 +234,9 @@ public class interpreterLisp implements  Iinterpreter{
      * Reads a literal list from the tokens.
      * Assumes the current token is LPAREN and collects all tokens until the matching RPAREN,
      * returning a list of their lexemes (without further evaluation).
+     * 
+     * @return The list of lexemes in the literal list.
+     * @throws Exception if the list is malformed.
      */
     private List<Object> readLiteralList() throws Exception {
         if (tokens.get(current).getTokenType() != TokenType.LPAREN) {
@@ -242,6 +259,9 @@ public class interpreterLisp implements  Iinterpreter{
     /**
      * Reads a raw function body from the tokens as a String.
      * Assumes that the function body starts at the current token and goes until the matching RPAREN.
+     * 
+     * @return The raw function body as a String.
+     * @throws Exception if the function body is malformed.
      */
     private String readRawExpression() throws Exception {
         StringBuilder sb = new StringBuilder();
@@ -265,6 +285,11 @@ public class interpreterLisp implements  Iinterpreter{
         return sb.toString().trim();
     }
 
+    /**
+     * @return a reference to the internal placeholder cache, which is a Map
+     *         from placeholder names to the values they represent.
+     *         The returned Map is live and can be modified by the caller.
+     */
     public Map<String, Object> getPlaceholderCache() {
         return placeholderCache;
     }

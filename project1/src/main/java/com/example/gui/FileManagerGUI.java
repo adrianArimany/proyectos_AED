@@ -34,10 +34,16 @@ public class FileManagerGUI extends JFrame {
     private JButton resetButton;
 
     public FileManagerGUI() {
-        super("LISP Interpreter - Code Runner");
+        super("LISP Interpreter");
         initComponents();
     }
 
+    /**
+     * Initializes the GUI components for the frame and sets up the layout.
+     * It creates two text areas (one for code and one for output) and three buttons
+     * (to load a file, run the interpreter, and reset the program).
+     * It also adds the necessary action listeners to the buttons.
+     */
     private void initComponents() {
         // Create the text area where the user can type or see loaded code.
         codeTextArea = new JTextArea(15, 50);
@@ -79,6 +85,12 @@ public class FileManagerGUI extends JFrame {
         resetButton.addActionListener((ActionEvent e) -> resetProgram());
     }
 
+    /**
+     * Handles the "Load File" button action. Prompts the user for a file,
+     * stores the file in the "files" directory, reads the file content,
+     * and sets it as the text in the code area.
+     * If an error occurs, a message dialog is displayed.
+     */
     private void loadFileAction() {
         JFileChooser fileChooser = new JFileChooser();
         int result = fileChooser.showOpenDialog(FileManagerGUI.this);
@@ -148,6 +160,11 @@ public class FileManagerGUI extends JFrame {
         }
     }
     
+    /**
+    * Resets the program state by clearing function definitions and variables.
+    * Also clears the output text area and optionally the code text area.
+    * This method is useful for starting fresh without any previously set data.
+    */
      private void resetProgram() {
         // Clear function definitions and variables (adjust if you store more global state)
         DefunOperator.functionDefinitions.clear();
