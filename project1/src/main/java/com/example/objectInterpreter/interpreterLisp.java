@@ -29,6 +29,15 @@ public class interpreterLisp implements  Iinterpreter{
         this(tokens, new HashMap<>()); // Creates a new, empty placeholder cache.
     }
 
+    // Starts the evaluation process.
+    @Override
+    public Object evaluate() throws Exception {
+        placeholderCache.clear(); // Clear the cache for each new evaluation.
+        if (current >= tokens.size()) {
+            throw new Exception("No tokens to evaluate.");
+        }
+        return evalExpression();
+    }
 
 
     @Override
