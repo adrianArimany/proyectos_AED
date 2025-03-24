@@ -216,6 +216,58 @@ public class interpreterLisp implements  Iinterpreter{
         return result;
     }
 
+    /**
+     * Reads a literal list from the tokens.
+     * Assumes the current token is LPAREN and collects all tokens until the matching RPAREN,
+     * returning a list of their lexemes (without further evaluation).
+     */
+    private List<Object> readLiteralList() throws Exception {
+        if (tokens.get(current).getTokenType() != TokenType.LPAREN) {
+            throw new Exception("Expected '(' at beginning of literal list");
+        }
+        current++; // Skip '('
+        List<Object> literalList = new ArrayList<>();
+        while (current < tokens.size() && tokens.get(current).getTokenType() != TokenType.RPAREN) {
+            // Instead of evaluating, we simply take the lexeme.
+            literalList.add(tokens.get(current).getLexeme());
+            current++;
+        }
+        if (current >= tokens.size() || tokens.get(current).getTokenType() != TokenType.RPAREN) {
+            throw new Exception("Missing closing parenthesis in literal list");
+        }
+        current++; // Skip ')'
+        return literalList;
+    }
+
+    /**
+     * Reads a raw function body from the tokens as a String.
+     * Assumes that the function body starts at the current token and goes until the matching RPAREN.
+     */
+    private String readRawExpression() throws Exception {
+        StringBuilder sb = new StringBuilder();
+        int parenCount = 0;
+        while (current < tokens.size()) {
+            Token token = tokens.get(current);
+            if (token.getTokenType() == TokenType.LPAREN) {
+                parenCount++;
+            } else if (token.getTokenType() == TokenType.RPAREN) {
+                parenCount--;
+            }
+            sb.append(token.getLexeme()).append(" ");
+            current++;
+            if (parenCount == 0) {
+                break;
+            }
+        }
+        if (parenCount != 0) {
+            throw new Exception("Unmatched parentheses in function body.");
+        }
+        return sb.toString().trim();
+    }
+
+    public Map<String, Object> getPlaceholderCache() {
+        return placeholderCache;
+    }
 
 
 
