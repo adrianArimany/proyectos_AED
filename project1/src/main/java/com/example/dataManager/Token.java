@@ -39,21 +39,37 @@ public class Token {
         this.lexeme = lexeme;
     }
 
+    /**
+     * 
+     * @return the type of the token
+     */
     public TokenType getTokenType() {
         return type;
     }
+    /**
+     * @return the lexeme of the token (the actual text of the token)
+     */
     public String getLexeme() {
         return lexeme;
     }
+    /**
+     * 
+     * @return the line number that the token starts at
+     */
     public int getLine() {
         return line;
     }
+    /**
+     * @return the column number where the token is found
+     */
     public int getColumn() {
         return column;
     }
 
-
-    //Only for debugging and logging purposes
+    /**
+     * 
+     * @return the string representation of the token
+     */
     @Override
     public String toString() {
         return String.format("Token{type=%s, lexeme='%s'}", 

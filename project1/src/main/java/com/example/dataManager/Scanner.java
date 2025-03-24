@@ -43,6 +43,7 @@ public class Scanner {
 
   // <--------------------------------(Finite statemachines)-------------------------------->
   private void setUpFiniteStateMachines() {
+    //These are the tokens for the artihmetic operations.
     HashMap<Integer, Transition> operationsArithmetic = new HashMap<>();
     operationsArithmetic.put(0, new Transition(new int[] {
         (int) '+',
@@ -114,6 +115,7 @@ public class Scanner {
     // State 1: For each subsequent letter, stay in state 1.
     identifier.put(1, new Transition(allowedChars, 1, true));
   this.finiteStateMachines.add(new FSM(identifier, TokenType.IDENTIFIER));
+
 
 
     HashMap<Integer, Transition> conditionals = new HashMap<>();
@@ -248,6 +250,8 @@ public class Scanner {
    * If an FSM reaches a final state after processing all characters,
    * returns a token using that FSM’s token type.
    * Otherwise, returns an error token.
+   * @param candidate the candidate string to process
+   * @return a token representing the candidate string
    */
   private Token processCandidate(String candidate) {
     // Check for reserved tokens first (like DEFUN or SETQ)
@@ -292,11 +296,11 @@ public class Scanner {
 
   /**
    * Checks for any Reserved or special case in the scanner.
-   * Currently the reserved is for DEFUN and SETQ
+   * Currently the reserved is for DEFUN or SETQ or IF
    * 
    * 
-   * @param candidate
-   * @return
+   * @param candidate the candidate string to check
+   * @return a token representing the candidate string, or null if not reserved
    */
   private Token isReserved(String candidate) {
     if (candidate == null) {
