@@ -264,7 +264,7 @@ public class interpreterLisp implements  Iinterpreter{
             if (token.getTokenType() == TokenType.LPAREN) {
                 parenCount++;
             } else if (token.getTokenType() == TokenType.RPAREN) {
-                parenCount--;
+                parenCount--;   
             }
             sb.append(token.getLexeme()).append(" ");
             current++;
