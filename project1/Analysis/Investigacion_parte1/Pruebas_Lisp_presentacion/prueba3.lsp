@@ -1,0 +1,1 @@
+(defun run (a b c) (if (>= a b) (if (>= a c) a (if (>= b a) b a)) (if (>= b c) b c)))
