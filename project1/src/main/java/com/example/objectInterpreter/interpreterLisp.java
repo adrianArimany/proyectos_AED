@@ -10,7 +10,7 @@ import com.example.dataManager.Scanner;
 import com.example.dataManager.Token;
 import com.example.factory.OperationFactory;
 import com.example.operations.Operation;
-import com.example.operations.OperationFun.DefunOperator;
+import com.example.operations.operationFun.DefunOperator;
 import com.example.utils.TokenType;
 
 public class interpreterLisp implements  Iinterpreter{
