@@ -6,6 +6,7 @@ import com.example.dataManager.Scanner;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -62,5 +63,24 @@ public class interpreterLispTest {
         ArrayList<Token> tokens = scanner.runLine(line);
         interpreterLisp interprete = new interpreterLisp(tokens);
         assertEquals(6.0, interprete.evalExpression());
+    }
+
+    @Test
+    public void TestSetQ() throws Exception {
+        String line = "( SETQ X 5 )";
+        Scanner scanner = new Scanner();
+        ArrayList<Token> tokens = scanner.runLine(line);
+        interpreterLisp interprete = new interpreterLisp(tokens);
+        assertEquals(5.0, interprete.evalExpression());
+    }
+
+    @Test
+    public void testDefun() throws Exception {
+        String line = "( DEFUN SUMA ( X Y ) ( + X Y ) )";
+        Scanner scanner = new Scanner();
+        ArrayList<Token> tokens = scanner.runLine(line);
+        HashMap<String, Object> cacheplaceholder = new HashMap<>();
+        interpreterLisp interprete = new interpreterLisp(tokens, cacheplaceholder);
+        assertEquals("Function SUMA defined.", interprete.evalExpression());
     }
 }
