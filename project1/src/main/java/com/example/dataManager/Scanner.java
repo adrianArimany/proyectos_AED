@@ -129,13 +129,17 @@ public class Scanner {
       (int) '>',
       (int) '='
     }, 1, true));
-
     // State 1: If the operator started with '<' or '>', optionally accept '=' to form '<=' or '>='.
     // It will consider ==, but is not USED in lisp, so is not expected to be used.
     conditionals.put(1, new Transition(new int[] {
       (int) '='
     }, 2, true));
     this.finiteStateMachines.add(new FSM(conditionals, TokenType.CONDITIONALS));
+
+    HashMap<Integer, Transition> power = new HashMap<>();
+    // State 0: Accept '^' to form power operator.
+    power.put(0, new Transition(new int[] { (int) '^' }, 1, true));
+    this.finiteStateMachines.add(new FSM(power, TokenType.POWER));
 
     HashMap<Integer, Transition> inequality = new HashMap<>();
     // State 0: Accept '/'
@@ -318,6 +322,11 @@ public class Scanner {
     // Special conditionals in Lisp
     if (normalized.equals("IF")) {
         return new Token(TokenType.BOOLEAN, candidate); // Or TokenType.IDENTIFIER if not special
+    }
+
+    //special codnitional in Lisp
+    if (normalized.equals("LET")) {
+      return new Token(TokenType.LET, candidate);
     }
     return null;
   }

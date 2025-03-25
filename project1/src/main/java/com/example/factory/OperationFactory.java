@@ -38,6 +38,7 @@ public class OperationFactory {
             case "EQ" -> new BEqual();
             case "EQL" -> new BEqual();
             case "EQUAL" -> new BEqual();
+            //case "^" -> new Apower();
             default -> null;    
         };
     }

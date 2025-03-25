@@ -10,7 +10,9 @@ public enum TokenType {
 //PARENTESIS, // ( )
 LPAREN, // (
 RPAREN, // )
- 
+
+POWER, // ^
+
 OPERANDARITHMETIC, // + - * / %
  
 CONDITIONALS, // < > = 
@@ -27,4 +29,6 @@ EOF, // End of file
 ERROR, // Error token (can be when nothing is detected or an unexpected token is detected)
 
 FUN, // Pa los defun y setq
+
+LET, // Pa los let
 }
