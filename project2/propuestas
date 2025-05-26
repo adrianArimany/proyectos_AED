@@ -1,0 +1,23 @@
+1.a Recomendaciones de musica
+	- Limitarnos a solamente 10 generos 
+	- Retorna un conjunto de cancion en spotify
+1.b Recomendaciones de Libros
+	- Limitarnos a solamente 10 generos 
+	- Retorna un conjunto de libros en kindle 
+1.c Recomendaciones de Peliculas 
+	- Limitarnos a solamente 10 generos 
+	- Retorna un conjunto de peliculas en netflix 
+1.d Recomendaciones de Video Juegos
+	- Limitarnos a solamente 10 generos 
+	- Retorna un conjunto de juegos en steam 
+1.e Recomendaciones de Tesis
+	- Limitarnos a solamente 1 campos academico
+	- Limitarnos a solamente 10 temas del campo 
+	- Retorna un conjunto de temas de ese campo 
+1.f Recomendacion de Cafe en la UVG
+	- Retorna el cafe con menor precio
+ 
+2. Recomendaciones de teoremas de matematicas (en especifico geometria euclideana)
+3. Recomendaciones de pruebas de estadistica.
+
+
