@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         String uri = "bolt://localhost:7687";
         String user = "neo4j";
-        String password = "tu_contraseña";
+        String password = "einstein123";
 
         Neo4jConnector connector = new Neo4jConnector(uri, user, password);
         UsuarioService servicio = new UsuarioService(connector.getDriver());
