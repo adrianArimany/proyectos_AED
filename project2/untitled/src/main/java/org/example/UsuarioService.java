@@ -1,5 +1,9 @@
 package org.example;
 import org.neo4j.driver.*;
+import org.neo4j.driver.Record;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class UsuarioService {
     private final Driver driver;
@@ -51,5 +55,44 @@ public class UsuarioService {
             });
         }
     }
+
+    public void registrarPreferencias(String nombreUsuario, List<String> caracteristicas) {
+        try (Session session = driver.session()) {
+            for (String caracteristica : caracteristicas) {
+                session.writeTransaction(tx -> {
+                    tx.run(
+                            "MERGE (c:Caracteristica {nombre: $nombre}) " +
+                                    "MATCH (u:Usuario {nombreUsuario: $usuario}) " +
+                                    "MERGE (u)-[:QUIERE_CARACTERISTICA]->(c)",
+                            Values.parameters("nombre", caracteristica, "usuario", nombreUsuario)
+                    );
+                    return null;
+                });
+            }
+            System.out.println("Preferencias registradas.");
+        }
+    }
+
+    public List<String> recomendarSamplesParaUsuario(String nombreUsuario) {
+        List<String> recomendaciones = new ArrayList<>();
+        try (Session session = driver.session()) {
+            session.readTransaction(tx -> {
+                Result result = tx.run(
+                        "MATCH (u:Usuario {nombreUsuario: $usuario})-[:QUIERE_CARACTERISTICA]->(c:Caracteristica)<-[:TIENE_CARACTERISTICA]-(s:Sample) " +
+                                "RETURN DISTINCT s.id AS sampleId " +
+                                "LIMIT 10",
+                        Values.parameters("usuario", nombreUsuario)
+                );
+                while (result.hasNext()) {
+                    Record row = result.next();
+                    recomendaciones.add(row.get("sampleId").asString());
+                }
+                return null;
+            });
+        }
+        return recomendaciones;
+    }
+
+
 }
 
