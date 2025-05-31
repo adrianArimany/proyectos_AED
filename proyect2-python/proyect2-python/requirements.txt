@@ -1,0 +1,6 @@
+streamlit
+pandas
+datasets
+neo4j
+librosa
+soundfile
