@@ -1,0 +1,8 @@
+# Wait 60 seconds before connecting using these details, or login to https://console.neo4j.io to validate the Aura Instance is available
+NEO4J_URI=neo4j+s://39e71d3b.databases.neo4j.io
+NEO4J_USERNAME=neo4j
+NEO4J_PASSWORD=oW-zD88F8HYM-ML9SkEdvnCGIG8HES8BsyJK6yLTv-w
+NEO4J_DATABASE=neo4j
+
+
+streamlit run nsynth_recommender.py

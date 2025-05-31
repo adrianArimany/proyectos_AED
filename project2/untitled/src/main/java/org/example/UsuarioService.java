@@ -11,7 +11,7 @@ public class UsuarioService {
         this.driver = driver;
     }
 
-    public boolean crearUsuario(String nombreUsuario, String contrasena, boolean esMusico) {
+    public boolean crearUsuario(String nombreUsuario, String contraseña, boolean esMusico) {
         if (usuarioExiste(nombreUsuario)) {
             System.out.println("El usuario ya existe.");
             return false;
@@ -19,8 +19,8 @@ public class UsuarioService {
 
         try (Session session = driver.session()) {
             session.writeTransaction(tx -> {
-                tx.run("CREATE (u:Usuario {nombreUsuario: $nombreUsuario, contrasena: $contrasena, esMusico: $esMusico})",
-                        Values.parameters("nombreUsuario", nombreUsuario, "contrasena", contrasena, "esMusico", esMusico));
+                tx.run("CREATE (u:Usuario {nombreUsuario: $nombreUsuario, contraseña: $contraseña, esMusico: $esMusico})",
+                        Values.parameters("nombreUsuario", nombreUsuario, "contraseña", contraseña, "esMusico", esMusico));
                 return null;
             });
             return true;
