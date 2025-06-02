@@ -1,7 +1,9 @@
 # db.py
+
 from datetime import datetime
 from neo4j import GraphDatabase
 from config import AURA_URI, AURA_USER, AURA_PASS
+import json 
 
 # create a singleton driver
 _driver = GraphDatabase.driver(AURA_URI, auth=(AURA_USER, AURA_PASS))
@@ -95,9 +97,45 @@ def get_success_stats(inexpert_name: str):
             {"u": inexpert_name}
         ).single()
         return rec["hits"], rec["total"]
+    
+
+def make_json_serializable(obj):
+    """
+    Recursively converts a given object into a JSON-serializable format.
+
+    This function takes an object and checks its type. If the object is a
+    dictionary or list, it recursively processes its elements. If the object
+    is a basic type (int, float, str, bool, or None), it returns the object
+    as-is. For unsupported types, it converts the object to a string.
+
+    Args:
+        obj: The object to be converted into a JSON-serializable format.
+
+    Returns:
+        A JSON-serializable representation of the input object.
+    """
+    if isinstance(obj, dict):
+        return {k: make_json_serializable(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [make_json_serializable(v) for v in obj]
+    elif isinstance(obj, (int, float, str, bool)) or obj is None:
+        return obj
+    else:
+        return str(obj)  # fallback: convert unknown types to string
+
+def translate_filters_to_expert_terms(filters_dict):
+    mapping = {
+        "velocity_range": "Dynamic Range",
+        "qualities": "Timbre Qualities",
+        "sample_rate": "Resolution",
+        "family": "Instrument Family"
+    }
+    return {mapping.get(k, k): v for k, v in filters_dict.items()}
+
 
 def record_missing_request(user: str, filters: dict):
     with _driver.session() as sess:
+        safe_filters = make_json_serializable(filters)
         sess.run(
             """
             CREATE (:MissingRequest {
@@ -109,6 +147,43 @@ def record_missing_request(user: str, filters: dict):
             {
                 "user": user,
                 "ts": datetime.utcnow().isoformat(),
-                "filters": filters
+                "filters": json.dumps(safe_filters) 
             }
+        )
+
+
+def get_missing_requests():
+    with _driver.session() as sess:
+        result = sess.run(
+            "MATCH (r:MissingRequest) RETURN r.user AS user, r.timestamp AS ts, r.filters AS filters"
+        )
+        return [
+            {
+                "user": record["user"],
+                "timestamp": record["ts"],
+                "filters": json.loads(record["filters"])
+            }
+            for record in result
+        ]
+
+def get_expert_requested_samples():
+    with _driver.session() as sess:
+        result = sess.run(
+            """
+            MATCH (r:ExpertSampleRequest)
+            RETURN r.description AS description, r.votes AS votes
+            ORDER BY r.votes DESC
+            """
+        )
+        return [record.data() for record in result]
+
+def upvote_expert_sample(description: str):
+    with _driver.session() as sess:
+        sess.run(
+            """
+            MERGE (r:ExpertSampleRequest {description: $desc})
+            ON CREATE SET r.votes = 1
+            ON MATCH SET r.votes = r.votes + 1
+            """,
+            {"desc": description}
         )
