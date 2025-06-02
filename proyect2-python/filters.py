@@ -13,7 +13,7 @@ def apply_expert_filters(
     qual_sel: List[str]
 ) -> pd.DataFrame:
     """
-    Given the full samples_df, apply Expert‐level filters and return the filtered subset.
+    Given the full samples_df, apply Expert-level filters and return the filtered subset.
     - pitch_range: (min_pitch, max_pitch)
     - vel_range: (min_vel, max_vel)
     - sr_sel: list of selected sample rates (if empty => no filter)
@@ -44,7 +44,7 @@ def apply_inexpert_filters(
     qual_sel_in: List[str]
 ) -> pd.DataFrame:
     """
-    Given recs_df (expert‐preferred samples), apply Inexpert filters and return the filtered subset.
+    Given recs_df (expert-preferred samples), apply Inexpert filters and return the filtered subset.
     - fam_sel_in: selected families (if empty => no filter)
     - vel_range_in: (min_vel, max_vel)
     - sr_sel_in: selected sample rates (if empty => no filter)
