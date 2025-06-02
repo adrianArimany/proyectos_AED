@@ -3,7 +3,6 @@ import streamlit as st
 import db
 import pandas as pd
 import filters
-from config import NEEDED_PER_FAMILY
 import scoring
 import utils
 
