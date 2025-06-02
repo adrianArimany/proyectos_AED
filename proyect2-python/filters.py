@@ -58,6 +58,7 @@ def apply_inexpert_filters(
 
     if qual_sel_in:
         # recs_df["qualities"] is a list of strings per row
-        df = df[df["qualities"].apply(lambda qualities: any(q in qualities for q in qual_sel_in))]
+        df = df[df["qualities_str"].apply(lambda qualities: any(q in qualities for q in qual_sel_in))]
+
 
     return df

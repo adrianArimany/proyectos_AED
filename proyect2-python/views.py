@@ -3,80 +3,79 @@ import streamlit as st
 import db
 import pandas as pd
 import filters
-from scoring import compute_success_stats
 from config import NEEDED_PER_FAMILY
-from utils import save_inexpert_request_email
+import scoring
+import utils
+
 
 def inexpert_view(user_name: str, samples_df: pd.DataFrame) -> None:
-    """
-    Show the Inexpert user interface, where users can filter and download samples.
-
-    :param user_name: The username of the user (inexpert).
-    :param samples_df: The full sample dataset.
-    """
     st.info(f"Logged in as {user_name} (inexpert)")
-    st.header("Inexpert Filter Menu:")
+    st.header("Inexpert Guidance")
 
-    # --- Widgets for inexpert filters ---
-    families = sorted(samples_df.family.unique())
-    saved_fam = st.session_state.get("family", [])
-    fam_sel = st.multiselect("Familia Instrumental", families, default=[f for f in saved_fam if f in families])
+    # Inexpert filter widgets
+    families = sorted(samples_df.instrument_family_str.unique())
+    fam_sel_in = st.multiselect("Instrument Family", families)
 
     vel_min, vel_max = int(samples_df.velocity.min()), int(samples_df.velocity.max())
-    session_vel = st.session_state.get("velocity_range", (vel_min, vel_max))
-    if not isinstance(session_vel, tuple) or len(session_vel) != 2:
-        session_vel = (vel_min, vel_max)
-    session_vel = (
-        max(vel_min, min(session_vel[0], vel_max)),
-        max(vel_min, min(session_vel[1], vel_max))
+    vel_range_in = st.slider("Energy (Velocity)", vel_min, vel_max, (vel_min, vel_max))
+
+    sample_rates = sorted(samples_df.sample_rate.unique())
+    sr_sel_in = st.multiselect("Sample Rate", sample_rates)
+
+    # fetch all expert-preferred samples from DB
+    recs_list = db.fetch_expert_recs()
+    recs_df = pd.DataFrame(recs_list)
+    if recs_df.empty:
+        st.info("No recommendations yet—experts must pick samples first.")
+        return
+
+    # apply inexpert filters
+    filtered = filters.apply_inexpert_filters(
+        recs_df,
+        fam_sel_in,
+        vel_range_in,
+        sr_sel_in,
+        [] 
     )
-    vel_range = st.slider("Velocidad", vel_min, vel_max, value=session_vel)
-    
-    
-    srates = sorted(samples_df.rate.unique())
-    saved_sr = st.session_state.get("sample_rate", [])
-    sr_sel = st.multiselect("Sample Rate", srates, default=[s for s in saved_sr if s in srates])
-
-
-    all_quals = sorted({q for row in samples_df.qualities for q in row})
-    saved_quals = st.session_state.get("qualities", [])
-    qual_sel = st.multiselect("Cualidades", all_quals, default=[q for q in saved_quals if q in all_quals])
-
-    filtered = db.apply_inexpert_filters(samples_df, fam_sel, vel_range, sr_sel, qual_sel)
-    
 
     if filtered.empty:
-        st.warning("No se encontraron samples con esos filtros.")
+        st.warning("No samples matched your filters.")
         if st.button("Solicitar este tipo de sample"):
             filters_used = {
-                "family": fam_sel,
-                "velocity_range": vel_range,
-                "sample_rate": sr_sel,
-                "qualities": qual_sel
+                "velocity_range": vel_range_in,
+                "sample_rate": sr_sel_in,
+                "family": fam_sel_in,
+                "qualities": []
             }
             db.record_missing_request(user_name, filters_used)
+            st.success("Solicitud registrada para futuros samples similares.")
 
             with st.expander("¿Deseas recibir una notificación cuando esté disponible?"):
                 email = st.text_input("Correo electrónico:")
                 if st.button("Guardar correo"):
                     if email:
-                        save_inexpert_request_email(user_name, email)
+                        utils.save_inexpert_request_email(user_name, email)
                         st.success("Tu correo fue registrado correctamente.")
                     else:
                         st.warning("Por favor ingresa un correo válido.")
         st.stop()
 
-    # --- Mostrar samples filtrados ---
-    st.write(f"Se encontraron {len(filtered)} samples sugeridos por expertos:")
-    for _, row in filtered.iterrows():
-        key = f"download_{row['note_str']}"
-        if st.button(f"Descargar {row['note_str']}", key=key):
-            db.record_preference(user_name, row['note_str'])
-            st.success(f"Descargaste {row['note_str']}")
+    st.write(f"Recommended {len(filtered)} samples:")
 
-    # --- Estadísticas de aciertos ---
-    hits, total, ratio = compute_success_stats(user_name)
-    st.metric(label="Aciertos con expertos", value=f"{hits}/{total}", delta=f"{ratio*100:.1f}%")
+    for _, row in filtered.iterrows():
+        key = f"in_{row['id']}"
+        if st.button(f"Download {row['id']}", key=key):
+            hit = any(row["id"] == rec["id"] for rec in recs_list)
+            db.record_download(user_name, row["id"], hit)
+            if hit:
+                st.success(f"Good choice! {row['id']} was expert-approved.")
+            else:
+                st.error(f"{row['id']} wasn't in expert picks.")
+
+    # show success metric
+    hits, total, rate = scoring.compute_success_stats(user_name)
+    st.metric("Success rate", f"{hits}/{total}", delta=f"{rate:.0%}")
+
     
 
     
