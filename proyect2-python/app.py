@@ -108,7 +108,7 @@ def main():
                 if hit:
                     st.success(f"Good choice! {row['id']} was expert-approved.")
                 else:
-                    st.error(f"{row['id']} wasn't in expert picks.")
+                    st.error(f"{row['id']} wasnt in expert picks.")
 
         # show success metric
         hits, total, rate = scoring.compute_success_stats(user_name)
