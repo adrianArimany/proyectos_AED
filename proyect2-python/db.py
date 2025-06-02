@@ -1,4 +1,5 @@
 # db.py
+from datetime import datetime
 from neo4j import GraphDatabase
 from config import AURA_URI, AURA_USER, AURA_PASS
 
@@ -94,3 +95,20 @@ def get_success_stats(inexpert_name: str):
             {"u": inexpert_name}
         ).single()
         return rec["hits"], rec["total"]
+
+def record_missing_request(user: str, filters: dict):
+    with _driver.session() as sess:
+        sess.run(
+            """
+            CREATE (:MissingRequest {
+                user: $user,
+                timestamp: $ts,
+                filters: $filters
+            })
+            """,
+            {
+                "user": user,
+                "ts": datetime.utcnow().isoformat(),
+                "filters": filters
+            }
+        )

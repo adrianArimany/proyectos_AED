@@ -1,5 +1,4 @@
 # app.py
-
 import streamlit as st
 import pandas as pd
 
@@ -58,6 +57,22 @@ def main():
             inst_sel,
             qual_sel
         )
+
+        if filtered.empty:
+            st.warning("No samples matched your filters.")
+            if st.button("Solicitar este tipo de sample"):
+                filters_used = {
+                    "pitch_range": pitch_range,
+                    "velocity_range": vel_range,
+                    "sample_rate": sr_sel,
+                    "family": fam_sel,
+                    "instrument": inst_sel,
+                    "qualities": qual_sel
+                }
+                db.record_missing_request(user_name, filters_used)
+                st.success("Solicitud registrada para futuros samples similares.")
+                st.stop()
+
         st.write(f"Found {len(filtered)} samples:")
 
         for _, row in filtered.iterrows():
@@ -97,6 +112,20 @@ def main():
             sr_sel_in,
             qual_sel_in
         )
+
+        if filtered.empty:
+            st.warning("No samples matched your filters.")
+            if st.button("Solicitar este tipo de sample"):
+                filters_used = {
+                    "velocity_range": vel_range_in,
+                    "sample_rate": sr_sel_in,
+                    "family": fam_sel_in,
+                    "qualities": qual_sel_in
+                }
+                db.record_missing_request(user_name, filters_used)
+                st.success("Solicitud registrada para futuros samples similares.")
+                st.stop()
+
         st.write(f"Recommended {len(filtered)} samples:")
 
         for _, row in filtered.iterrows():
