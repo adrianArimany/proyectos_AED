@@ -3,7 +3,7 @@ import streamlit as st
 import db
 import pandas as pd
 import filters
-import scoring
+from scoring import compute_success_stats
 from config import NEEDED_PER_FAMILY
 from utils import save_inexpert_request_email
 
@@ -18,71 +18,68 @@ def inexpert_view(user_name: str, samples_df: pd.DataFrame) -> None:
     st.header("Inexpert Filter Menu:")
 
     # --- Widgets for inexpert filters ---
-    families = sorted(samples_df.instrument_family_str.unique())
-    fam_sel_in = st.multiselect("Instrument Family", families)
+    families = sorted(samples_df.family.unique())
+    saved_fam = st.session_state.get("family", [])
+    fam_sel = st.multiselect("Familia Instrumental", families, default=[f for f in saved_fam if f in families])
 
     vel_min, vel_max = int(samples_df.velocity.min()), int(samples_df.velocity.max())
-    vel_range_in = st.slider("Velocity", vel_min, vel_max, (vel_min, vel_max))
-
-    sample_rates = sorted(samples_df.sample_rate.unique())
-    sr_sel_in = st.multiselect("Sample Rate", sample_rates)
-
-    all_quals = sorted({q for lst in samples_df.qualities_str for q in lst})
-    qual_sel_in = st.multiselect("Qualities", all_quals)
-
-    # --- Get expert recommendations ---
-    recs_list = db.fetch_expert_recs()
-    recs_df = pd.DataFrame(recs_list)
-
-    if recs_df.empty:
-        st.info("No expert recommendations available yet.")
-        return
-
-    # --- Apply inexpert filters ---
-    filtered = filters.apply_inexpert_filters(
-        recs_df,
-        fam_sel_in,
-        vel_range_in,
-        sr_sel_in,
-        qual_sel_in
+    session_vel = st.session_state.get("velocity_range", (vel_min, vel_max))
+    if not isinstance(session_vel, tuple) or len(session_vel) != 2:
+        session_vel = (vel_min, vel_max)
+    session_vel = (
+        max(vel_min, min(session_vel[0], vel_max)),
+        max(vel_min, min(session_vel[1], vel_max))
     )
+    vel_range = st.slider("Velocidad", vel_min, vel_max, value=session_vel)
+    
+    
+    srates = sorted(samples_df.rate.unique())
+    saved_sr = st.session_state.get("sample_rate", [])
+    sr_sel = st.multiselect("Sample Rate", srates, default=[s for s in saved_sr if s in srates])
+
+
+    all_quals = sorted({q for row in samples_df.qualities for q in row})
+    saved_quals = st.session_state.get("qualities", [])
+    qual_sel = st.multiselect("Cualidades", all_quals, default=[q for q in saved_quals if q in all_quals])
+
+    filtered = db.apply_inexpert_filters(samples_df, fam_sel, vel_range, sr_sel, qual_sel)
+    
 
     if filtered.empty:
-        st.warning("No samples matched your filters.")
+        st.warning("No se encontraron samples con esos filtros.")
         if st.button("Solicitar este tipo de sample"):
             filters_used = {
-                "velocity_range": vel_range_in,
-                "sample_rate": sr_sel_in,
-                "family": fam_sel_in,
-                "qualities": qual_sel_in
+                "family": fam_sel,
+                "velocity_range": vel_range,
+                "sample_rate": sr_sel,
+                "qualities": qual_sel
             }
             db.record_missing_request(user_name, filters_used)
-            st.success("Request registered for future sample availability.")
-            
-            with st.expander("Would you live to receive an email when the sample has been found?"):
-                email = st.text_input("email:")
-                if st.button("email"):
+
+            with st.expander("¿Deseas recibir una notificación cuando esté disponible?"):
+                email = st.text_input("Correo electrónico:")
+                if st.button("Guardar correo"):
                     if email:
                         save_inexpert_request_email(user_name, email)
-                        st.success("Your email has been saved.")
+                        st.success("Tu correo fue registrado correctamente.")
                     else:
-                        st.warning("please enter another email.")
-            
-            st.stop()
-    else:
-        st.write(f"Recommended {len(filtered)} samples:")
-        for _, row in filtered.iterrows():
-            key = f"in_{row['id']}"
-            if st.button(f"Download {row['id']}", key=key):
-                hit = any(row["id"] == rec["id"] for rec in recs_list)
-                db.record_download(user_name, row["id"], hit)
-                if hit:
-                    st.success(f"Good choice! {row['id']} was expert-approved.")
-                else:
-                    st.error(f"{row['id']} wasn't in expert picks.")
-        hits, total, rate = scoring.compute_success_stats(user_name)
-        st.metric("Success Rate", f"{hits}/{total}", delta=f"{rate:.0%}")
+                        st.warning("Por favor ingresa un correo válido.")
+        st.stop()
 
+    # --- Mostrar samples filtrados ---
+    st.write(f"Se encontraron {len(filtered)} samples sugeridos por expertos:")
+    for _, row in filtered.iterrows():
+        key = f"download_{row['note_str']}"
+        if st.button(f"Descargar {row['note_str']}", key=key):
+            db.record_preference(user_name, row['note_str'])
+            st.success(f"Descargaste {row['note_str']}")
+
+    # --- Estadísticas de aciertos ---
+    hits, total, ratio = compute_success_stats(user_name)
+    st.metric(label="Aciertos con expertos", value=f"{hits}/{total}", delta=f"{ratio*100:.1f}%")
+    
+
+    
 def expert_view(user_name: str, samples_df: pd.DataFrame) -> None:
     """
     Show the expert view (unverified) for the given user_name and samples_df.
@@ -166,22 +163,43 @@ def expert_filtering_logic(user_name: str, samples_df: pd.DataFrame, is_verified
     st.header("Expert Filter Menu:")
 
     pitch_min, pitch_max = int(samples_df.pitch.min()), int(samples_df.pitch.max())
-    pitch_range = st.slider("Pitch", pitch_min, pitch_max, value=st.session_state.get("pitch_range", (pitch_min, pitch_max)))
-
+    session_pitch = st.session_state.get("pitch_range", (pitch_min, pitch_max))
+    
+    if not isinstance(session_pitch, tuple) or len(session_pitch) != 2:
+        session_pitch = (pitch_min, pitch_max)
+    session_pitch = (
+        max(pitch_min, min(session_pitch[0], pitch_max)),
+        max(pitch_min, min(session_pitch[1], pitch_max))
+    )
+    pitch_range = st.slider("Pitch", pitch_min, pitch_max, value=session_pitch)
+    
     vel_min, vel_max = int(samples_df.velocity.min()), int(samples_df.velocity.max())
-    vel_range = st.slider("Velocity", vel_min, vel_max, value=st.session_state.get("velocity_range", (vel_min, vel_max)))
+    session_vel = st.session_state.get("velocity_range", (vel_min, vel_max))
 
+    if not isinstance(session_vel, tuple) or len(session_vel) != 2:
+        session_vel = (vel_min, vel_max)
+    session_vel = (
+        max(vel_min, min(session_vel[0], vel_max)),
+        max(vel_min, min(session_vel[1], vel_max)),
+    )
+    vel_range = st.slider("Velocity", vel_min, vel_max, value=session_vel)
+    
+    
     sample_rates = sorted(samples_df.sample_rate.unique())
-    sr_sel = st.multiselect("Sample Rate", sample_rates, default=st.session_state.get("sample_rate", []))
-
+    saved_sr = st.session_state.get("sample_rate", [])
+    sr_sel = st.multiselect("Sample Rate", sample_rates, default=[s for s in saved_sr if s in sample_rates])
+    
     families = sorted(samples_df.instrument_family_str.unique())
-    fam_sel = st.multiselect("Instrument Family", families, default=st.session_state.get("family", []))
+    saved_fam = st.session_state.get("family", [])
+    fam_sel = st.multiselect("Instrument Family", families, default=[f for f in saved_fam if f in families])
 
     instruments = sorted(samples_df.instrument_str.unique())
-    inst_sel = st.multiselect("Instrument", instruments, default=st.session_state.get("instrument", []))
+    saved_inst = st.session_state.get("instrument", [])
+    inst_sel = st.multiselect("Instrument", instruments, default=[i for i in saved_inst if i in instruments])
 
     all_quals = sorted({q for lst in samples_df.qualities_str for q in lst})
-    qual_sel = st.multiselect("Qualities", all_quals, default=st.session_state.get("qualities", []))
+    saved_quals = st.session_state.get("qualities", [])
+    qual_sel = st.multiselect("Qualities", all_quals, default=[q for q in saved_quals if q in all_quals])
 
     filtered = filters.apply_expert_filters(
         samples_df,
