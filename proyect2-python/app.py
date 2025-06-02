@@ -9,7 +9,7 @@ import scoring
 from config import NEEDED_PER_FAMILY
 
 def main():
-    st.title("NSynth Sample Recommender")
+    st.title("Sample Recommender")
 
     # 1) Ingest & push samples (only once, cached inside db.ensure...)
     samples_df = ingestion.get_samples_df()  # DataFrame of all picked samples
@@ -137,7 +137,7 @@ def main():
                 if hit:
                     st.success(f"Good choice! {row['id']} was expert-approved.")
                 else:
-                    st.error(f"{row['id']} wasn't in expert picks.")
+                    st.error(f"{row['id']} wasnt in expert picks.")
 
         # show success metric
         hits, total, rate = scoring.compute_success_stats(user_name)
