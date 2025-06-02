@@ -26,8 +26,8 @@ Este proyecto provee una aplicación Streamlit que ingresa metadatos de NSynth (
 
 1. **Clona este repositorio**:
    ```bash
-   git clone https://github.com/adrianArimany/proyectos_AED/proyect2-python.git
-   cd 
+   git clone https://github.com/adrianArimany/proyectos_AED.git
+   cd proyectos_AED/proyecto2-python 
    ```
 2. **Crea y activa un entorno virtual** (se asume Windows/PowerShell; en Linux/macOS basta con `python3 -m venv .venv` y luego `source .venv/bin/activate`):
    ```powershell
@@ -45,7 +45,7 @@ Este proyecto provee una aplicación Streamlit que ingresa metadatos de NSynth (
 
 ## Variables de configuración
 
-Edita `config.py` para incluir tu información de conexión a Neo4j Aura:
+Esta es la configuracion para acceder a Neo4j Aura:
 
 ```python
 # config.py
@@ -55,6 +55,8 @@ AURA_PASS         = "oW-zD88F8HYM-ML9SkEdvnCGIG8HES8BsyJK6yLTv-w"
 
 
 NEEDED_PER_FAMILY = 2   # En el caso que no tenga suficiente memoria, puede limir la base de datos.
+#Esta info se encuentra en:
+#data/Neo4j-39e71d3b-Created-2025-05-28.txt 
 ```
 
 ---
@@ -143,4 +145,3 @@ Abre esa URL en tu navegador para ver la interfaz.
    - Usuario se identifica como “Experto” (filtra y marca preferencias) o “Inexperto” (filtra solo entre las muestras aprobadas por expertos).  
    - Los clicks de descarga generan relaciones en la base de datos y la sección Inexpert muestra la tasa de aciertos acumulada.
 
-¡Eso es todo! Con este README, cualquier persona debería poder clonar, instalar dependencias y levantar la aplicación sin dificultades.
