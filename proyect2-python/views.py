@@ -63,6 +63,8 @@ def inexpert_view(user_name: str, samples_df: pd.DataFrame) -> None:
                     st.success(f"Good choice! {row['id']} was expert-approved.")
                 else:
                     st.error(f"{row['id']} wasn't in expert picks.")
+        hits, total, rate = scoring.compute_success_stats(user_name)
+        st.metric("Success Rate", f"{hits}/{total}", delta=f"{rate:.0%}")
 
 def expert_view(user_name: str, samples_df: pd.DataFrame):
     st.info(f"Logged in as {user_name} (guest expert)")
