@@ -7,6 +7,12 @@ import scoring
 from config import NEEDED_PER_FAMILY
 
 def inexpert_view(user_name: str, samples_df: pd.DataFrame) -> None:
+    """
+    Show the Inexpert user interface, where users can filter and download samples.
+
+    :param user_name: The username of the user (inexpert).
+    :param samples_df: The full sample dataset.
+    """
     st.info(f"Logged in as {user_name} (inexpert)")
     st.header("Inexpert Filter Menu:")
 
@@ -67,12 +73,35 @@ def inexpert_view(user_name: str, samples_df: pd.DataFrame) -> None:
         st.metric("Success Rate", f"{hits}/{total}", delta=f"{rate:.0%}")
 
 def expert_view(user_name: str, samples_df: pd.DataFrame) -> None:
+    """
+    Show the expert view (unverified) for the given user_name and samples_df.
+
+    The expert view allows users to filter samples by pitch, velocity, sample rate,
+    instrument family, and quality. The view also shows the number of samples
+    that match the user's filters.
+
+    Args:
+        user_name: The name of the user.
+        samples_df: The DataFrame of samples to filter.
+    """
     st.info(f"Accessed as {user_name} (guest expert)")
     expert_filtering_logic(user_name, samples_df, is_verified=False)
     
     
     
 def verified_expert_view(user_name, samples_df):
+    """
+    Show the verified expert view for the given user_name and samples_df.
+
+    The verified expert view shows the list of user requests, and allows the
+    expert to curate a sample for each request. The view also shows the filters
+    used by the user, and allows the expert to load those filters into their
+    own view.
+
+    Args:
+        user_name: The name of the user.
+        samples_df: The DataFrame of samples to filter.
+    """
     st.success(f"Logged in as {user_name} (verified expert)")
 
     st.subheader("Inexpert User Requests")
@@ -107,6 +136,19 @@ def verified_expert_view(user_name, samples_df):
     expert_filtering_logic(user_name, samples_df, is_verified=True)
 
 def expert_filtering_logic(user_name: str, samples_df: pd.DataFrame, is_verified: bool):
+    """
+    Show the expert filter menu with the following widgets:
+
+    - Pitch (slider)
+    - Velocity (slider)
+    - Sample Rate (multiselect)
+    - Instrument Family (multiselect)
+    - Instrument (multiselect)
+    - Qualities (multiselect)
+
+    The view also shows the number of samples that match the user's filters,
+    and allows the user to solicit a sample that matches their filters.
+    """
     st.header("Expert Filter Menu:")
 
     pitch_min, pitch_max = int(samples_df.pitch.min()), int(samples_df.pitch.max())

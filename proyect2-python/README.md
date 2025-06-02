@@ -5,7 +5,7 @@ Este proyecto provee una aplicación Streamlit que ingresa metadatos de NSynth (
 
 - **Expertos**: filtran muestras usando todos los atributos disponibles.  
 - **Inexpertos**: filtran sobre la selección previa de expertos y obtienen métricas de acierto.
-
+- **Expertos Verificados**: son los expertos que pueden revisar directamente las pedidadas de los inexpertos, y tambien tiene un voto mas pesado ante nuevos samples.
 ---
 
 ## Requisitos
@@ -102,9 +102,34 @@ Abre esa URL en tu navegador para ver la interfaz.
   Contiene la función para calcular métricas de acierto:
   - `compute_success_stats(inexpert_name: str) -> Tuple[int,int,float]`: obtiene `(hits, total)` desde `db.get_success_stats(...)` y calcula la tasa `hits/total`.
 
-- **`views.py`**
-  Es la interface para los expertos, inexpertos y expertos verificados. 
-  -
+- **`views.py`**  
+  Contiene las vistas principales de la interfaz gráfica, separadas por tipo de usuario. Cada función construye el flujo de interacción con Streamlit:
+
+  - `inexpert_view(user_name: str, samples_df: pd.DataFrame) -> None`  
+    Vista para usuarios inexpertos. Permite aplicar filtros básicos (familia de instrumentos, velocidad, tasa de muestreo y cualidades) sobre las recomendaciones hechas por expertos. Muestra los samples disponibles, permite solicitarlos si no hay coincidencias y registra las descargas junto con su éxito relativo.
+
+  - `expert_view(user_name: str, samples_df: pd.DataFrame) -> None`  
+    Vista para expertos invitados (no verificados). Permite aplicar filtros detallados sobre todas las muestras disponibles, solicitar nuevos samples, registrar preferencias y votar por muestras solicitadas por otros expertos (voto simple).
+
+  - `verified_expert_view(user_name: str, samples_df: pd.DataFrame) -> None`  
+    Vista para expertos verificados. Tiene las mismas capacidades que un experto invitado, pero además puede visualizar las solicitudes realizadas por usuarios inexpertos, aplicar automáticamente los filtros de dichas solicitudes y votar con doble peso sobre samples solicitados.
+
+  - `expert_filtering_logic(user_name: str, samples_df: pd.DataFrame, is_verified: bool) -> None`  
+    Lógica compartida entre `expert_view` y `verified_expert_view`. Contiene los widgets de filtrado, la aplicación de filtros, la visualización de samples resultantes, el registro de descargas, y la sección de votación. El parámetro `is_verified` ajusta el peso de los votos (1 o 2).
+ 
+ - **`utils.py`**  
+  Contiene funciones auxiliares generales para la gestión de usuarios y almacenamiento de información:
+
+  - `generate_username(prefix: str) -> str`  
+    Genera un identificador único aleatorio para un usuario a partir de un prefijo, como `"expert"` o `"inexpert"` (ejemplo: `"expert4821"`).
+
+  - `save_user_info(username: str, role: str) -> None`  
+    Guarda información básica del usuario en un archivo `.json` dentro del directorio `personal_info/userinfo/`. Registra:
+    - `username`: nombre generado del usuario.
+    - `role`: tipo de usuario (`expert` o `inexpert`).
+    - `filters`: lista vacía inicial para registrar filtros aplicados.
+    - `samples_clicked`: lista vacía inicial para registrar descargas.
+    - `start_time`: hora en que el usuario accedió al sistema.
 
 
 - **`app.py`**  

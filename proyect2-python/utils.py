@@ -31,3 +31,10 @@ def save_user_info(username, role):
             "samples_clicked": [],
             "start_time": datetime.utcnow().isoformat()
         }, f, indent=2)
+
+
+def save_verified_request(email):
+    os.makedirs("verified_experts_requests", exist_ok=True)
+    path = f"verified_experts_requests/request_{datetime.utcnow().isoformat()}.json"
+    with open(path, "w") as f:
+        json.dump({"email": email, "timestamp": datetime.utcnow().isoformat()}, f, indent=2)

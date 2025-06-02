@@ -7,7 +7,7 @@ import db
 import ingestion
 from config import NEEDED_PER_FAMILY
 from datetime import datetime
-from utils import generate_username, save_user_info
+from utils import generate_username, save_user_info, save_verified_request
 from views import inexpert_view, expert_view, verified_expert_view
 
 
@@ -49,7 +49,16 @@ def main():
             st.session_state.user_type = "expert"
             db.create_user(guest_id, expert=True)
             save_user_info(guest_id, "expert")
-
+        
+        if st.button("Become Verified Expert"):
+            with st.expander("Request Verification"):
+                email = st.text_input("Enter your email to request verification:")
+                if st.button("Submit Request"):
+                    if email:
+                        save_verified_request(email)
+                        st.success("Verification request submitted.")
+                    else:
+                        st.warning("Please enter a valid email.")
     
     elif login_mode == "Inexpert":
         if st.button("Enter as Inexpert"):
