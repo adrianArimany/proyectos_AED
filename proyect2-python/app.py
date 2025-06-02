@@ -6,7 +6,7 @@ import db
 import ingestion
 from config import NEEDED_PER_FAMILY
 from datetime import datetime
-from utils import generate_username, save_user_info, save_verified_request, save_inexpert_request_email
+from utils import generate_username, save_user_info, save_verified_request
 from views import inexpert_view, expert_view, verified_expert_view
 
 
