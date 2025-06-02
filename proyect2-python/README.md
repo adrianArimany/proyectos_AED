@@ -131,6 +131,8 @@ Abre esa URL en tu navegador para ver la interfaz.
     - `samples_clicked`: lista vacía inicial para registrar descargas.
     - `start_time`: hora en que el usuario accedió al sistema.
 
+  - `save_verified_request(gmail)`:
+  Guarda en un archivo los correos cuando un usuario desea ser verificado.   
 
 - **`app.py`**  
   Script principal que define la interfaz de Streamlit:

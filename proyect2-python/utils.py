@@ -34,6 +34,13 @@ def save_user_info(username, role):
 
 
 def save_verified_request(email):
+    """
+    Save the given email to a JSON file in the verified_experts_requests directory.
+
+    The saved file will contain the email and timestamp of the request.
+
+    :param email: The email of the user.
+    """
     os.makedirs("verified_experts_requests", exist_ok=True)
     path = f"verified_experts_requests/request_{datetime.utcnow().isoformat()}.json"
     with open(path, "w") as f:
