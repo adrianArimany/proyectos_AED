@@ -124,6 +124,21 @@ def make_json_serializable(obj):
         return str(obj)  # fallback: convert unknown types to string
 
 def translate_filters_to_expert_terms(filters_dict):
+    """
+    Translates filter keys from inexpert terms to expert terms.
+
+    This function takes a dictionary of filters with keys in inexpert terms
+    and returns a new dictionary where the keys are translated to expert terms
+    according to a predefined mapping. If a key in the filters_dict does not
+    have a corresponding entry in the mapping, it is returned unchanged.
+
+    Args:
+        filters_dict: A dictionary where keys are inexpert filter terms.
+
+    Returns:
+        A dictionary with keys translated to expert filter terms.
+    """
+
     mapping = {
         "velocity_range": "Dynamic Range",
         "qualities": "Timbre Qualities",
@@ -134,6 +149,15 @@ def translate_filters_to_expert_terms(filters_dict):
 
 
 def record_missing_request(user: str, filters: dict):
+    """
+    Record a MissingRequest node in the database, given a user name and a filter dictionary.
+
+    The filter dictionary is converted to a JSON-serializable format before being stored in the
+    database.
+
+    :param user: The name of the user making the request.
+    :param filters: A dictionary containing the filters selected by the user.
+    """
     with _driver.session() as sess:
         safe_filters = make_json_serializable(filters)
         sess.run(
@@ -153,6 +177,12 @@ def record_missing_request(user: str, filters: dict):
 
 
 def get_missing_requests():
+    """
+    Return a list of dictionaries containing the user name, timestamp, and filters associated with
+    each MissingRequest node in the database.
+
+    The returned list is sorted by timestamp in ascending order, so the most recent requests are last.
+    """
     with _driver.session() as sess:
         result = sess.run(
             "MATCH (r:MissingRequest) RETURN r.user AS user, r.timestamp AS ts, r.filters AS filters"
@@ -167,6 +197,11 @@ def get_missing_requests():
         ]
 
 def get_expert_requested_samples():
+    """
+    Return a list of dictionaries containing the description and vote count for all expert sample requests.
+    
+    The list is sorted by vote count in descending order, so the most popular requests are first.
+    """
     with _driver.session() as sess:
         result = sess.run(
             """
@@ -178,6 +213,16 @@ def get_expert_requested_samples():
         return [record.data() for record in result]
 
 def upvote_expert_sample(description: str):
+    """
+    Increase the vote count for an expert sample request with the given description.
+
+    If an ExpertSampleRequest with the specified description does not exist, 
+    it creates a new node with an initial vote count of 1. If it already exists, 
+    it increments the existing vote count by 1.
+
+    :param description: The description of the expert sample request to upvote.
+    """
+
     with _driver.session() as sess:
         sess.run(
             """
@@ -189,6 +234,12 @@ def upvote_expert_sample(description: str):
         )
         
 def remove_missing_request(user: str, timestamp: str):
+    """
+    Deletes a MissingRequest node from the database.
+
+    :param user: The user name associated with the request.
+    :param timestamp: The timestamp of the request to be deleted.
+    """
     with _driver.session() as sess:
         sess.run(
             """
