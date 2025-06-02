@@ -10,7 +10,7 @@ import scoring
 from config import NEEDED_PER_FAMILY
 
 def main():
-    st.title("NSynth Sample Recommender")
+    st.title("Sample Recommender")
 
     # 1) Ingest & push samples (only once, cached inside db.ensure...)
     samples_df = ingestion.get_samples_df()  # DataFrame of all picked samples
