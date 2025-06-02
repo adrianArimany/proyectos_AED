@@ -102,6 +102,11 @@ Abre esa URL en tu navegador para ver la interfaz.
   Contiene la función para calcular métricas de acierto:
   - `compute_success_stats(inexpert_name: str) -> Tuple[int,int,float]`: obtiene `(hits, total)` desde `db.get_success_stats(...)` y calcula la tasa `hits/total`.
 
+- **`views.py`**
+  Es la interface para los expertos, inexpertos y expertos verificados. 
+  -
+
+
 - **`app.py`**  
   Script principal que define la interfaz de Streamlit:
   1. Ingiere todas las muestras desde `ingestion.get_samples_df(full=True)` y las escribe a Neo4j con `db.ensure_sample_nodes(...)`.
@@ -116,6 +121,9 @@ Abre esa URL en tu navegador para ver la interfaz.
      - Llama a `filters.apply_inexpert_filters(...)` para mostrar recomendaciones.  
      - Al descargar, comprueba si `id` está en la lista de expertos (`hit`), graba con `db.record_download(...)` y muestra un mensaje.  
      - Muestra la métrica `Success rate` usando `scoring.compute_success_stats(...)`.
+
+
+
 
 - **`requirements.txt`**  
   Lista las dependencias que debe instalarse con `pip install -r requirements.txt`:
