@@ -5,6 +5,7 @@ import pandas as pd
 import filters
 import scoring
 from config import NEEDED_PER_FAMILY
+from utils import save_inexpert_request_email
 
 def inexpert_view(user_name: str, samples_df: pd.DataFrame) -> None:
     """
@@ -57,6 +58,16 @@ def inexpert_view(user_name: str, samples_df: pd.DataFrame) -> None:
             }
             db.record_missing_request(user_name, filters_used)
             st.success("Request registered for future sample availability.")
+            
+            with st.expander("Would you live to receive an email when the sample has been found?"):
+                email = st.text_input("email:")
+                if st.button("email"):
+                    if email:
+                        save_inexpert_request_email(user_name, email)
+                        st.success("Your email has been saved.")
+                    else:
+                        st.warning("please enter another email.")
+            
             st.stop()
     else:
         st.write(f"Recommended {len(filtered)} samples:")
@@ -129,7 +140,10 @@ def verified_expert_view(user_name, samples_df):
             if st.button(f"Curate Sample for {req['user']} ({req['timestamp']})"):
                 for k, v in req["filters"].items():
                     st.session_state[k] = v
-                st.success("Filtros cargados para curar este sample.")
+                st.success("Filters changed. You can now curate a sample for this request.")
+            if st.button(f"Mark as resolved: ({req['user']})", key=f"resolve_{req['timestamp']}"):
+                db.delete_missing_request(req["user"], req["timestamp"])
+                st.success("Request deleted.")
                 st.experimental_rerun()
             st.markdown("---")
 

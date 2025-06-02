@@ -42,6 +42,17 @@ def save_verified_request(email):
     :param email: The email of the user.
     """
     os.makedirs("verified_experts_requests", exist_ok=True)
-    path = f"verified_experts_requests/request_{datetime.utcnow().isoformat()}.json"
+    path = f"personal_info/verified_experts_requests/request_{datetime.utcnow().isoformat()}.json"
     with open(path, "w") as f:
         json.dump({"email": email, "timestamp": datetime.utcnow().isoformat()}, f, indent=2)
+        
+        
+def save_inexpert_request_email(username: str, email: str):
+    os.makedirs("personal_info/inexpert_requests", exist_ok=True)
+    path = f"personal_info/inexpert_requests/{username}.json"
+    with open(path, "w") as f:
+        json.dump({
+            "username": username,
+            "email": email,
+            "timestamp": datetime.utcnow().isoformat()
+        }, f, indent=2)

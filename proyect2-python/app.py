@@ -6,14 +6,13 @@ import db
 import ingestion
 from config import NEEDED_PER_FAMILY
 from datetime import datetime
-from utils import generate_username, save_user_info, save_verified_request
+from utils import generate_username, save_user_info, save_verified_request, save_inexpert_request_email
 from views import inexpert_view, expert_view, verified_expert_view
 
 
 def main():
     
-    samples_df = ingestion.get_samples_df()
-    db.ensure_sample_nodes(samples_df)
+    
     
     if "session_id" not in st.session_state:
         st.session_state.session_id = str(uuid.uuid4())[:8]
@@ -72,6 +71,9 @@ def main():
         user_name = st.session_state.user_name
         st.session_state.start_time = datetime.utcnow()
 
+        samples_df = ingestion.get_samples_df()
+        db.ensure_sample_nodes(samples_df)
+        
         if user_type == "inexpert":
             inexpert_view(user_name, samples_df)
         elif user_type == "expert":

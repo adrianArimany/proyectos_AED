@@ -187,3 +187,12 @@ def upvote_expert_sample(description: str):
             """,
             {"desc": description}
         )
+        
+def remove_missing_request(user: str, timestamp: str):
+    with _driver.session() as sess:
+        sess.run(
+            """
+            MATCH (r:MissingRequest {user: $user, timestamp: $timestamp}) DETACH DELETE r
+            """,
+            {"user": user, "timestamp": timestamp}
+        )
