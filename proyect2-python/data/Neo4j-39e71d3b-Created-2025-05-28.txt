@@ -5,4 +5,4 @@ NEO4J_PASSWORD=oW-zD88F8HYM-ML9SkEdvnCGIG8HES8BsyJK6yLTv-w
 NEO4J_DATABASE=neo4j
 
 
-streamlit run nsynth_recommender.py
+streamlit run app.py
