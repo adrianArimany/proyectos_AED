@@ -39,7 +39,6 @@ def main():
                     st.session_state.user_name = username
                     st.session_state.user_type = "verified_expert"
                     db.create_user(username, expert=True)
-                    st.success(f"Welcome back, {username} (verified expert)")
                 else:
                     st.error("Invalid credentials")
     
@@ -50,7 +49,6 @@ def main():
             st.session_state.user_type = "expert"
             db.create_user(guest_id, expert=True)
             save_user_info(guest_id, "expert")
-            st.success(f"Logged in as {guest_id}")
 
     
     elif login_mode == "Inexpert":
@@ -60,7 +58,6 @@ def main():
             st.session_state.user_type = "inexpert"
             db.create_user(user_id, expert=False)
             save_user_info(user_id, "inexpert")
-            st.success(f"Logged in as {user_id}")
     
     if "user_name" in st.session_state:
         user_type = st.session_state.user_type
