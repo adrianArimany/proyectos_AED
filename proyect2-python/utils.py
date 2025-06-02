@@ -48,6 +48,14 @@ def save_verified_request(email):
         
         
 def save_inexpert_request_email(username: str, email: str):
+    """
+    Save the given email to a JSON file in the inexpert_requests directory.
+
+    The saved file will contain the username, email and timestamp of the request.
+
+    :param username: The username of the user.
+    :param email: The email of the user.
+    """
     os.makedirs("personal_info/inexpert_requests", exist_ok=True)
     path = f"personal_info/inexpert_requests/{username}.json"
     with open(path, "w") as f:
